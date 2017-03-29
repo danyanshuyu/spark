@@ -1,0 +1,1 @@
+-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I "E:\Program Files\Keil4\ARM\INC" -I "E:\Program Files\Keil4\ARM\INC\ST\STM32F10x" -o "stm32_rtc.o" --omf_browse "stm32_rtc.crf" --depend "stm32_rtc.d" "User\Stm32_Rtc.c"

@@ -1,0 +1,1 @@
+-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I "C:\Program Files (x86)\keil\ARM\INC" -I "C:\Program Files (x86)\keil\ARM\INC\ST\STM32F10x" -o "functions.o" --omf_browse "functions.crf" --depend "functions.d" "User\Functions.c"

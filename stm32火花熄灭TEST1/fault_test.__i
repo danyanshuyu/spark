@@ -1,0 +1,1 @@
+-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I "C:\Program Files (x86)\keil\ARM\INC" -I "C:\Program Files (x86)\keil\ARM\INC\ST\STM32F10x" -o "fault_test.o" --omf_browse "fault_test.crf" --depend "fault_test.d" "User\Fault_test.c"

@@ -1,0 +1,1 @@
+"User\fsmc_cpld_sram.c" -E -c --cpu Cortex-M3 -D__MICROLIB -O0 --apcs=interwork -I "E:\Program Files\Keil4\ARM\INC" -I "E:\Program Files\Keil4\ARM\INC\ST\STM32F10x" -o "fsmc_cpld_sram.i" --list_dir ".\\" --list

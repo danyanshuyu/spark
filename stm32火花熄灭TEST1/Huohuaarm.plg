@@ -1,0 +1,859 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+E:\stm32»ð»¨Ï¨Ãð\stm32»ð»¨Ï¨ÃðTEST1\Huohuaarm.uvproj
+Project File Date:  03/29/2017
+
+<h2>Output:</h2>
+compiling Functions.c...
+User\extern_variables.h(57): warning:  #1295-D: Deprecated declaration RTC_Configuration - give arg types
+User\extern_variables.h(110): warning:  #1295-D: Deprecated declaration ScreenDataRecv_Process - give arg types
+User\Functions.c(30): warning:  #1295-D: Deprecated declaration TextProcess - give arg types
+User\Functions.c(31): warning:  #1295-D: Deprecated declaration ButtonProcess - give arg types
+User\Functions.c(32): warning:  #1295-D: Deprecated declaration itoa - give arg types
+User\Functions.c(33): warning:  #1295-D: Deprecated declaration itoaD - give arg types
+User\Functions.c(34): warning:  #1295-D: Deprecated declaration itoaT - give arg types
+User\Functions.c(35): warning:  #1295-D: Deprecated declaration itoaF - give arg types
+User\Functions.c(36): warning:  #1295-D: Deprecated declaration Alarm_Display_A - give arg types
+User\Functions.c(37): warning:  #1295-D: Deprecated declaration Alarm_Display_B - give arg types
+User\Functions.c(38): warning:  #1295-D: Deprecated declaration Fault_Display_A - give arg types
+User\Functions.c(39): warning:  #1295-D: Deprecated declaration Disable_Display_A - give arg types
+User\Functions.c(99): warning:  #223-D: function "_24C08_I2C_ByteRead" declared implicitly
+User\Functions.c(100): warning:  #223-D: function "Delay_ms" declared implicitly
+User\Functions.c(101): warning:  #223-D: function "_24C08_I2C_BufferRead" declared implicitly
+User\Functions.c(104): warning:  #223-D: function "WriteLayer" declared implicitly
+User\Functions.c(110): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(111): warning:  #223-D: function "GUI_RectangleFill" declared implicitly
+User\Functions.c(114): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(128): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(129): warning:  #223-D: function "GUI_RectangleFill" declared implicitly
+User\Functions.c(132): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(139): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(140): warning:  #223-D: function "GUI_RectangleFill" declared implicitly
+User\Functions.c(147): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(148): warning:  #223-D: function "DisArea_Image" declared implicitly
+User\Functions.c(164): warning:  #223-D: function "DisplyLayer" declared implicitly
+User\Functions.c(165): warning:  #223-D: function "CopyLayer" declared implicitly
+User\Functions.c(173): warning:  #186-D: pointless comparison of unsigned integer with zero
+User\Functions.c(177): warning:  #223-D: function "RTC_Display" declared implicitly
+User\Functions.c(178): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(179): warning:  #223-D: function "GUI_RectangleFill" declared implicitly
+User\Functions.c(181): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(185): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(186): warning:  #223-D: function "GUI_RectangleFill" declared implicitly
+User\Functions.c(188): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(196): warning:  #186-D: pointless comparison of unsigned integer with zero
+User\Functions.c(196): warning:  #186-D: pointless comparison of unsigned integer with zero
+User\Functions.c(196): warning:  #186-D: pointless comparison of unsigned integer with zero
+User\Functions.c(201): warning:  #223-D: function "RTC_Display" declared implicitly
+User\Functions.c(202): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(203): warning:  #223-D: function "GUI_RectangleFill" declared implicitly
+User\Functions.c(205): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(209): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(210): warning:  #223-D: function "GUI_RectangleFill" declared implicitly
+User\Functions.c(212): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(220): warning:  #223-D: function "_24C08_I2C_ByteRead" declared implicitly
+User\Functions.c(221): warning:  #223-D: function "Delay_ms" declared implicitly
+User\Functions.c(222): warning:  #223-D: function "_24C08_I2C_BufferRead" declared implicitly
+User\Functions.c(226): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(227): warning:  #223-D: function "GUI_RectangleFill" declared implicitly
+User\Functions.c(230): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(237): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(238): warning:  #223-D: function "GUI_RectangleFill" declared implicitly
+User\Functions.c(241): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(246): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+User\Functions.c(247): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(248): warning:  #223-D: function "GUI_RectangleFill" declared implicitly
+User\Functions.c(251): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(259): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "const char *"
+User\Functions.c(260): warning:  #223-D: function "_24C08_I2C_ByteWrite" declared implicitly
+User\Functions.c(262): warning:  #223-D: function "_24C08_I2C_PageWrite" declared implicitly
+User\Functions.c(290): warning:  #174-D: expression has no effect
+User\Functions.c(297): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(298): warning:  #223-D: function "GUI_RectangleFill" declared implicitly
+User\Functions.c(304): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(305): warning:  #223-D: function "_24C08_I2C_HalfwordWrite" declared implicitly
+User\Functions.c(80): warning:  #177-D: variable "Subtype" was declared but never referenced
+User\Functions.c(81): warning:  #177-D: variable "Status" was declared but never referenced
+User\Functions.c(390): warning:  #186-D: pointless comparison of unsigned integer with zero
+User\Functions.c(477): warning:  #223-D: function "WriteLayer" declared implicitly
+User\Functions.c(478): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(479): warning:  #223-D: function "GUI_RectangleFill" declared implicitly
+User\Functions.c(482): warning:  #223-D: function "DisArea_Image" declared implicitly
+User\Functions.c(483): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(492): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(497): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(503): warning:  #223-D: function "DisplyLayer" declared implicitly
+User\Functions.c(511): warning:  #223-D: function "Data_Get_Once" declared implicitly
+User\Functions.c(571): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(575): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(600): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(637): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(641): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(674): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(678): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(867): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(868): warning:  #223-D: function "GUI_Line" declared implicitly
+User\Functions.c(892): warning:  #223-D: function "_24C08_I2C_HalfwordRead" declared implicitly
+User\Functions.c(915): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(916): warning:  #223-D: function "GUI_Line" declared implicitly
+User\Functions.c(1029): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1030): warning:  #223-D: function "GUI_Line" declared implicitly
+User\Functions.c(1057): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1058): warning:  #223-D: function "GUI_Line" declared implicitly
+User\Functions.c(1080): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1081): warning:  #223-D: function "GUI_Line" declared implicitly
+User\Functions.c(1138): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1143): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1173): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1211): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1215): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1248): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1252): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1306): warning:  #223-D: function "_24C08_I2C_HalfwordWrite" declared implicitly
+User\Functions.c(1312): warning:  #223-D: function "GUI_CircleFill" declared implicitly
+User\Functions.c(1325): warning:  #223-D: function "CopyLayer" declared implicitly
+User\Functions.c(1365): warning:  #223-D: function "Delay_ms" declared implicitly
+User\Functions.c(1382): warning:  #223-D: function "GUI_CircleFill" declared implicitly
+User\Functions.c(1383): warning:  #223-D: function "_24C08_I2C_HalfwordRead" declared implicitly
+User\Functions.c(1384): warning:  #223-D: function "Data_Save_Fault" declared implicitly
+User\Functions.c(1385): warning:  #223-D: function "_24C08_I2C_HalfwordWrite" declared implicitly
+User\Functions.c(1387): warning:  #223-D: function "SetTextView" declared implicitly
+User\Functions.c(1394): warning:  #223-D: function "GUI_CircleFill" declared implicitly
+User\Functions.c(1396): warning:  #223-D: function "_24C08_I2C_HalfwordWrite" declared implicitly
+User\Functions.c(1398): warning:  #223-D: function "SetTextView" declared implicitly
+User\Functions.c(1401): warning:  #223-D: function "CopyLayer" declared implicitly
+User\Functions.c(1473): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1479): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1489): warning:  #223-D: function "_24C08_I2C_HalfwordWrite" declared implicitly
+User\Functions.c(1501): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1509): warning:  #223-D: function "_24C08_I2C_HalfwordWrite" declared implicitly
+User\Functions.c(1520): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1550): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1556): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1566): warning:  #223-D: function "_24C08_I2C_HalfwordWrite" declared implicitly
+User\Functions.c(1567): warning:  #223-D: function "SetTouchScreen" declared implicitly
+User\Functions.c(1579): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1587): warning:  #223-D: function "_24C08_I2C_HalfwordWrite" declared implicitly
+User\Functions.c(1588): warning:  #223-D: function "SetTouchScreen" declared implicitly
+User\Functions.c(1599): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1652): warning:  #223-D: function "_24C08_I2C_HalfwordWrite" declared implicitly
+User\Functions.c(1658): warning:  #223-D: function "GUI_CircleFill" declared implicitly
+User\Functions.c(1668): warning:  #223-D: function "SetTextView" declared implicitly
+User\Functions.c(1670): warning:  #223-D: function "CopyLayer" declared implicitly
+User\Functions.c(1713): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1719): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1729): warning:  #223-D: function "_24C08_I2C_HalfwordWrite" declared implicitly
+User\Functions.c(1741): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1744): warning:  #223-D: function "SetTextView" declared implicitly
+User\Functions.c(1752): warning:  #223-D: function "_24C08_I2C_HalfwordWrite" declared implicitly
+User\Functions.c(1754): warning:  #223-D: function "Data_Save_Disable" declared implicitly
+User\Functions.c(1766): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1768): warning:  #223-D: function "SetTextView" declared implicitly
+User\Functions.c(1788): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(1789): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(1795): warning:  #223-D: function "Delay_ms" declared implicitly
+User\Functions.c(1804): warning:  #223-D: function "_24C08_I2C_HalfwordRead" declared implicitly
+User\Functions.c(1805): warning:  #223-D: function "Data_Save_Fault" declared implicitly
+User\Functions.c(1806): warning:  #223-D: function "_24C08_I2C_HalfwordWrite" declared implicitly
+User\Functions.c(1811): warning:  #223-D: function "_24C08_I2C_HalfwordRead" declared implicitly
+User\Functions.c(1830): warning:  #223-D: function "_24C08_I2C_HalfwordWrite" declared implicitly
+User\Functions.c(1831): warning:  #223-D: function "_24C08_I2C_PageWrite" declared implicitly
+User\Functions.c(1832): warning:  #223-D: function "_24C08_I2C_ByteWrite" declared implicitly
+User\Functions.c(1834): warning:  #223-D: function "_24C08_I2C_HalfwordRead" declared implicitly
+User\Functions.c(1843): warning:  #223-D: function "WriteLayer" declared implicitly
+User\Functions.c(1845): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(1846): warning:  #223-D: function "GUI_RectangleFill" declared implicitly
+User\Functions.c(1853): warning:  #223-D: function "GUI_CircleFill" declared implicitly
+User\Functions.c(1858): warning:  #223-D: function "GUI_CircleFill" declared implicitly
+User\Functions.c(1864): warning:  #223-D: function "GUI_CircleFill" declared implicitly
+User\Functions.c(1866): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(1871): warning:  #223-D: function "GUI_CircleFill" declared implicitly
+User\Functions.c(1873): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(1875): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(1879): warning:  #223-D: function "SetTextView" declared implicitly
+User\Functions.c(1883): warning:  #223-D: function "DisArea_Image" declared implicitly
+User\Functions.c(1886): warning:  #223-D: function "DisplyLayer" declared implicitly
+User\Functions.c(1887): warning:  #223-D: function "CopyLayer" declared implicitly
+User\Functions.c(1901): warning:  #223-D: function "WriteLayer" declared implicitly
+User\Functions.c(1903): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(1904): warning:  #223-D: function "GUI_RectangleFill" declared implicitly
+User\Functions.c(1907): warning:  #223-D: function "_24C08_I2C_HalfwordRead" declared implicitly
+User\Functions.c(1911): warning:  #223-D: function "GUI_CircleFill" declared implicitly
+User\Functions.c(1916): warning:  #223-D: function "GUI_CircleFill" declared implicitly
+User\Functions.c(1920): warning:  #223-D: function "SetTextView" declared implicitly
+User\Functions.c(1922): warning:  #223-D: function "DisArea_Image" declared implicitly
+User\Functions.c(1924): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(1941): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1946): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1953): warning:  #223-D: function "DisplyLayer" declared implicitly
+User\Functions.c(1954): warning:  #223-D: function "CopyLayer" declared implicitly
+User\Functions.c(1967): warning:  #223-D: function "Data_Get_Once_Fault" declared implicitly
+User\Functions.c(1976): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(1977): warning:  #223-D: function "GUI_RectangleFill" declared implicitly
+User\Functions.c(1979): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(2004): warning:  #223-D: function "Data_Get_Once_Disable" declared implicitly
+User\Functions.c(2013): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(2014): warning:  #223-D: function "GUI_RectangleFill" declared implicitly
+User\Functions.c(2016): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(2041): warning:  #223-D: function "Data_Get_Once" declared implicitly
+User\Functions.c(2050): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(2051): warning:  #223-D: function "GUI_RectangleFill" declared implicitly
+User\Functions.c(2053): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(2082): warning:  #223-D: function "Data_Get_Once" declared implicitly
+User\Functions.c(2091): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(2092): warning:  #223-D: function "GUI_RectangleFill" declared implicitly
+User\Functions.c(2094): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c - 0 Error(s), 198 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: Code=38018 RO-data=4362 RW-data=1164 ZI-data=1692  
+FromELF: creating hex file...
+"Huohuaarm.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+assembling cortexm3_macro.s...
+assembling stm32f10x_vector.s...
+compiling main.c...
+User\extern_variables.h(57): warning:  #1295-D: Deprecated declaration RTC_Configuration - give arg types
+User\extern_variables.h(110): warning:  #1295-D: Deprecated declaration ScreenDataRecv_Process - give arg types
+User\Screen.h(30): warning:  #1295-D: Deprecated declaration SendBeginCMD - give arg types
+User\Screen.h(38): warning:  #1295-D: Deprecated declaration SendEndCmd - give arg types
+User\Screen.h(81): warning:  #1295-D: Deprecated declaration GUI_CleanScreen - give arg types
+User\Screen.h(361): warning:  #1295-D: Deprecated declaration SetTouchScreen_Adj - give arg types
+User\Screen.h(369): warning:  #1295-D: Deprecated declaration TestTouchScreen - give arg types
+User\main.c(27): warning:  #1295-D: Deprecated declaration RTC_Display - give arg types
+User\main.c(73): warning:  #223-D: function "PCF8563_I2C_Init" declared implicitly
+User\main.c(76): warning:  #223-D: function "_24C08_I2C_Init" declared implicitly
+User\main.c(83): warning:  #223-D: function "Power_on_Init" declared implicitly
+User\main.c(84): warning:  #223-D: function "_24C08_I2C_HalfwordWrite" declared implicitly
+User\main.c(86): warning:  #223-D: function "Power_on_self_Test" declared implicitly
+User\main.c(110): warning:  #223-D: function "ScreenInit" declared implicitly
+User\main.c(118): warning:  #223-D: function "Screen_update" declared implicitly
+User\main.c(180): warning:  #177-D: variable "EXTI_InitStructure" was declared but never referenced
+User\main.c(181): warning:  #177-D: variable "HSEStartUpStatus" was declared but never referenced
+User\main.c(492): warning:  #223-D: function "itoa" declared implicitly
+User\main.c(493): warning:  #223-D: function "itoaD" declared implicitly
+User\main.c(508): warning:  #223-D: function "itoa" declared implicitly
+User\main.c(509): warning:  #223-D: function "itoaD" declared implicitly
+User\main.c(514): warning:  #223-D: function "itoaD" declared implicitly
+compiling stm32f10x_it.c...
+User\extern_variables.h(57): warning:  #1295-D: Deprecated declaration RTC_Configuration - give arg types
+User\extern_variables.h(110): warning:  #1295-D: Deprecated declaration ScreenDataRecv_Process - give arg types
+User\stm32f10x_it.c(569): warning:  #223-D: function "_24C08_I2C_HalfwordRead" declared implicitly
+compiling fsmc_cpld_sram.c...
+User\extern_variables.h(57): warning:  #1295-D: Deprecated declaration RTC_Configuration - give arg types
+User\extern_variables.h(110): warning:  #1295-D: Deprecated declaration ScreenDataRecv_Process - give arg types
+compiling Spark_test.c...
+User\extern_variables.h(57): warning:  #1295-D: Deprecated declaration RTC_Configuration - give arg types
+User\extern_variables.h(110): warning:  #1295-D: Deprecated declaration ScreenDataRecv_Process - give arg types
+User\Spark_test.c(19): warning:  #1295-D: Deprecated declaration Water_Spray - give arg types
+User\Spark_test.c(22): warning:  #1295-D: Deprecated declaration Data_Get_All - give arg types
+User\Spark_test.c(182): warning:  #223-D: function "Delay_ms" declared implicitly
+User\Spark_test.c(183): warning:  #223-D: function "_24C08_I2C_HalfwordRead" declared implicitly
+User\Spark_test.c(196): warning:  #223-D: function "FSMC_SRAM_WriteStruct" declared implicitly
+User\Spark_test.c(198): warning:  #223-D: function "_24C08_I2C_HalfwordWrite" declared implicitly
+User\Spark_test.c(224): warning:  #223-D: function "FSMC_SRAM_ReadStruct" declared implicitly
+User\Spark_test.c(239): warning:  #68-D: integer conversion resulted in a change of sign
+compiling Params.c...
+User\extern_variables.h(57): warning:  #1295-D: Deprecated declaration RTC_Configuration - give arg types
+User\extern_variables.h(110): warning:  #1295-D: Deprecated declaration ScreenDataRecv_Process - give arg types
+compiling Flash_operation.c...
+User\extern_variables.h(57): warning:  #1295-D: Deprecated declaration RTC_Configuration - give arg types
+User\extern_variables.h(110): warning:  #1295-D: Deprecated declaration ScreenDataRecv_Process - give arg types
+compiling Rtc_operation.c...
+User\extern_variables.h(57): warning:  #1295-D: Deprecated declaration RTC_Configuration - give arg types
+User\extern_variables.h(110): warning:  #1295-D: Deprecated declaration ScreenDataRecv_Process - give arg types
+User\24C08_PCF8563_I2c.h(23): warning:  #1295-D: Deprecated declaration PCF8563_I2C_Init - give arg types
+User\24C08_PCF8563_I2c.h(57): warning:  #1295-D: Deprecated declaration _24C08_I2C_Init - give arg types
+User\24C08_PCF8563_I2c.h(64): warning:  #1-D: last line of file ends without a newline
+compiling Screen.c...
+User\Screen.h(30): warning:  #1295-D: Deprecated declaration SendBeginCMD - give arg types
+User\Screen.h(38): warning:  #1295-D: Deprecated declaration SendEndCmd - give arg types
+User\Screen.h(81): warning:  #1295-D: Deprecated declaration GUI_CleanScreen - give arg types
+User\Screen.h(361): warning:  #1295-D: Deprecated declaration SetTouchScreen_Adj - give arg types
+User\Screen.h(369): warning:  #1295-D: Deprecated declaration TestTouchScreen - give arg types
+User\Screen.c(1297): warning:  #1-D: last line of file ends without a newline
+compiling Functions.c...
+User\extern_variables.h(57): warning:  #1295-D: Deprecated declaration RTC_Configuration - give arg types
+User\extern_variables.h(110): warning:  #1295-D: Deprecated declaration ScreenDataRecv_Process - give arg types
+User\Functions.c(30): warning:  #1295-D: Deprecated declaration TextProcess - give arg types
+User\Functions.c(31): warning:  #1295-D: Deprecated declaration ButtonProcess - give arg types
+User\Functions.c(32): warning:  #1295-D: Deprecated declaration itoa - give arg types
+User\Functions.c(33): warning:  #1295-D: Deprecated declaration itoaD - give arg types
+User\Functions.c(34): warning:  #1295-D: Deprecated declaration itoaT - give arg types
+User\Functions.c(35): warning:  #1295-D: Deprecated declaration itoaF - give arg types
+User\Functions.c(36): warning:  #1295-D: Deprecated declaration Alarm_Display_A - give arg types
+User\Functions.c(37): warning:  #1295-D: Deprecated declaration Alarm_Display_B - give arg types
+User\Functions.c(38): warning:  #1295-D: Deprecated declaration Fault_Display_A - give arg types
+User\Functions.c(39): warning:  #1295-D: Deprecated declaration Disable_Display_A - give arg types
+User\Functions.c(99): warning:  #223-D: function "_24C08_I2C_ByteRead" declared implicitly
+User\Functions.c(100): warning:  #223-D: function "Delay_ms" declared implicitly
+User\Functions.c(101): warning:  #223-D: function "_24C08_I2C_BufferRead" declared implicitly
+User\Functions.c(104): warning:  #223-D: function "WriteLayer" declared implicitly
+User\Functions.c(110): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(111): warning:  #223-D: function "GUI_RectangleFill" declared implicitly
+User\Functions.c(114): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(128): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(129): warning:  #223-D: function "GUI_RectangleFill" declared implicitly
+User\Functions.c(132): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(139): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(140): warning:  #223-D: function "GUI_RectangleFill" declared implicitly
+User\Functions.c(147): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(148): warning:  #223-D: function "DisArea_Image" declared implicitly
+User\Functions.c(164): warning:  #223-D: function "DisplyLayer" declared implicitly
+User\Functions.c(165): warning:  #223-D: function "CopyLayer" declared implicitly
+User\Functions.c(173): warning:  #186-D: pointless comparison of unsigned integer with zero
+User\Functions.c(177): warning:  #223-D: function "RTC_Display" declared implicitly
+User\Functions.c(178): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(179): warning:  #223-D: function "GUI_RectangleFill" declared implicitly
+User\Functions.c(181): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(185): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(186): warning:  #223-D: function "GUI_RectangleFill" declared implicitly
+User\Functions.c(188): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(196): warning:  #186-D: pointless comparison of unsigned integer with zero
+User\Functions.c(196): warning:  #186-D: pointless comparison of unsigned integer with zero
+User\Functions.c(196): warning:  #186-D: pointless comparison of unsigned integer with zero
+User\Functions.c(201): warning:  #223-D: function "RTC_Display" declared implicitly
+User\Functions.c(202): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(203): warning:  #223-D: function "GUI_RectangleFill" declared implicitly
+User\Functions.c(205): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(209): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(210): warning:  #223-D: function "GUI_RectangleFill" declared implicitly
+User\Functions.c(212): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(220): warning:  #223-D: function "_24C08_I2C_ByteRead" declared implicitly
+User\Functions.c(221): warning:  #223-D: function "Delay_ms" declared implicitly
+User\Functions.c(222): warning:  #223-D: function "_24C08_I2C_BufferRead" declared implicitly
+User\Functions.c(226): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(227): warning:  #223-D: function "GUI_RectangleFill" declared implicitly
+User\Functions.c(230): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(237): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(238): warning:  #223-D: function "GUI_RectangleFill" declared implicitly
+User\Functions.c(241): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(246): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+User\Functions.c(247): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(248): warning:  #223-D: function "GUI_RectangleFill" declared implicitly
+User\Functions.c(251): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(259): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "const char *"
+User\Functions.c(260): warning:  #223-D: function "_24C08_I2C_ByteWrite" declared implicitly
+User\Functions.c(262): warning:  #223-D: function "_24C08_I2C_PageWrite" declared implicitly
+User\Functions.c(290): warning:  #174-D: expression has no effect
+User\Functions.c(297): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(298): warning:  #223-D: function "GUI_RectangleFill" declared implicitly
+User\Functions.c(304): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(305): warning:  #223-D: function "_24C08_I2C_HalfwordWrite" declared implicitly
+User\Functions.c(80): warning:  #177-D: variable "Subtype" was declared but never referenced
+User\Functions.c(81): warning:  #177-D: variable "Status" was declared but never referenced
+User\Functions.c(390): warning:  #186-D: pointless comparison of unsigned integer with zero
+User\Functions.c(477): warning:  #223-D: function "WriteLayer" declared implicitly
+User\Functions.c(478): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(479): warning:  #223-D: function "GUI_RectangleFill" declared implicitly
+User\Functions.c(482): warning:  #223-D: function "DisArea_Image" declared implicitly
+User\Functions.c(483): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(492): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(497): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(503): warning:  #223-D: function "DisplyLayer" declared implicitly
+User\Functions.c(511): warning:  #223-D: function "Data_Get_Once" declared implicitly
+User\Functions.c(571): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(575): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(600): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(637): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(641): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(674): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(678): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(867): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(868): warning:  #223-D: function "GUI_Line" declared implicitly
+User\Functions.c(892): warning:  #223-D: function "_24C08_I2C_HalfwordRead" declared implicitly
+User\Functions.c(915): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(916): warning:  #223-D: function "GUI_Line" declared implicitly
+User\Functions.c(1029): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1030): warning:  #223-D: function "GUI_Line" declared implicitly
+User\Functions.c(1057): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1058): warning:  #223-D: function "GUI_Line" declared implicitly
+User\Functions.c(1080): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1081): warning:  #223-D: function "GUI_Line" declared implicitly
+User\Functions.c(1138): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1143): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1173): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1211): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1215): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1248): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1252): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1306): warning:  #223-D: function "_24C08_I2C_HalfwordWrite" declared implicitly
+User\Functions.c(1312): warning:  #223-D: function "GUI_CircleFill" declared implicitly
+User\Functions.c(1325): warning:  #223-D: function "CopyLayer" declared implicitly
+User\Functions.c(1365): warning:  #223-D: function "Delay_ms" declared implicitly
+User\Functions.c(1382): warning:  #223-D: function "GUI_CircleFill" declared implicitly
+User\Functions.c(1383): warning:  #223-D: function "_24C08_I2C_HalfwordRead" declared implicitly
+User\Functions.c(1384): warning:  #223-D: function "Data_Save_Fault" declared implicitly
+User\Functions.c(1385): warning:  #223-D: function "_24C08_I2C_HalfwordWrite" declared implicitly
+User\Functions.c(1387): warning:  #223-D: function "SetTextView" declared implicitly
+User\Functions.c(1394): warning:  #223-D: function "GUI_CircleFill" declared implicitly
+User\Functions.c(1396): warning:  #223-D: function "_24C08_I2C_HalfwordWrite" declared implicitly
+User\Functions.c(1398): warning:  #223-D: function "SetTextView" declared implicitly
+User\Functions.c(1401): warning:  #223-D: function "CopyLayer" declared implicitly
+User\Functions.c(1473): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1479): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1489): warning:  #223-D: function "_24C08_I2C_HalfwordWrite" declared implicitly
+User\Functions.c(1501): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1509): warning:  #223-D: function "_24C08_I2C_HalfwordWrite" declared implicitly
+User\Functions.c(1520): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1550): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1556): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1566): warning:  #223-D: function "_24C08_I2C_HalfwordWrite" declared implicitly
+User\Functions.c(1567): warning:  #223-D: function "SetTouchScreen" declared implicitly
+User\Functions.c(1579): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1587): warning:  #223-D: function "_24C08_I2C_HalfwordWrite" declared implicitly
+User\Functions.c(1588): warning:  #223-D: function "SetTouchScreen" declared implicitly
+User\Functions.c(1599): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1652): warning:  #223-D: function "_24C08_I2C_HalfwordWrite" declared implicitly
+User\Functions.c(1658): warning:  #223-D: function "GUI_CircleFill" declared implicitly
+User\Functions.c(1668): warning:  #223-D: function "SetTextView" declared implicitly
+User\Functions.c(1670): warning:  #223-D: function "CopyLayer" declared implicitly
+User\Functions.c(1713): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1719): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1729): warning:  #223-D: function "_24C08_I2C_HalfwordWrite" declared implicitly
+User\Functions.c(1741): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1744): warning:  #223-D: function "SetTextView" declared implicitly
+User\Functions.c(1752): warning:  #223-D: function "_24C08_I2C_HalfwordWrite" declared implicitly
+User\Functions.c(1754): warning:  #223-D: function "Data_Save_Disable" declared implicitly
+User\Functions.c(1766): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1768): warning:  #223-D: function "SetTextView" declared implicitly
+User\Functions.c(1788): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(1789): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(1795): warning:  #223-D: function "Delay_ms" declared implicitly
+User\Functions.c(1804): warning:  #223-D: function "_24C08_I2C_HalfwordRead" declared implicitly
+User\Functions.c(1805): warning:  #223-D: function "Data_Save_Fault" declared implicitly
+User\Functions.c(1806): warning:  #223-D: function "_24C08_I2C_HalfwordWrite" declared implicitly
+User\Functions.c(1811): warning:  #223-D: function "_24C08_I2C_HalfwordRead" declared implicitly
+User\Functions.c(1830): warning:  #223-D: function "_24C08_I2C_HalfwordWrite" declared implicitly
+User\Functions.c(1831): warning:  #223-D: function "_24C08_I2C_PageWrite" declared implicitly
+User\Functions.c(1832): warning:  #223-D: function "_24C08_I2C_ByteWrite" declared implicitly
+User\Functions.c(1834): warning:  #223-D: function "_24C08_I2C_HalfwordRead" declared implicitly
+User\Functions.c(1843): warning:  #223-D: function "WriteLayer" declared implicitly
+User\Functions.c(1845): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(1846): warning:  #223-D: function "GUI_RectangleFill" declared implicitly
+User\Functions.c(1853): warning:  #223-D: function "GUI_CircleFill" declared implicitly
+User\Functions.c(1858): warning:  #223-D: function "GUI_CircleFill" declared implicitly
+User\Functions.c(1864): warning:  #223-D: function "GUI_CircleFill" declared implicitly
+User\Functions.c(1866): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(1871): warning:  #223-D: function "GUI_CircleFill" declared implicitly
+User\Functions.c(1873): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(1875): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(1879): warning:  #223-D: function "SetTextView" declared implicitly
+User\Functions.c(1883): warning:  #223-D: function "DisArea_Image" declared implicitly
+User\Functions.c(1886): warning:  #223-D: function "DisplyLayer" declared implicitly
+User\Functions.c(1887): warning:  #223-D: function "CopyLayer" declared implicitly
+User\Functions.c(1901): warning:  #223-D: function "WriteLayer" declared implicitly
+User\Functions.c(1903): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(1904): warning:  #223-D: function "GUI_RectangleFill" declared implicitly
+User\Functions.c(1907): warning:  #223-D: function "_24C08_I2C_HalfwordRead" declared implicitly
+User\Functions.c(1911): warning:  #223-D: function "GUI_CircleFill" declared implicitly
+User\Functions.c(1916): warning:  #223-D: function "GUI_CircleFill" declared implicitly
+User\Functions.c(1920): warning:  #223-D: function "SetTextView" declared implicitly
+User\Functions.c(1922): warning:  #223-D: function "DisArea_Image" declared implicitly
+User\Functions.c(1924): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(1941): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1946): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1953): warning:  #223-D: function "DisplyLayer" declared implicitly
+User\Functions.c(1954): warning:  #223-D: function "CopyLayer" declared implicitly
+User\Functions.c(1967): warning:  #223-D: function "Data_Get_Once_Fault" declared implicitly
+User\Functions.c(1976): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(1977): warning:  #223-D: function "GUI_RectangleFill" declared implicitly
+User\Functions.c(1979): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(2004): warning:  #223-D: function "Data_Get_Once_Disable" declared implicitly
+User\Functions.c(2013): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(2014): warning:  #223-D: function "GUI_RectangleFill" declared implicitly
+User\Functions.c(2016): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(2041): warning:  #223-D: function "Data_Get_Once" declared implicitly
+User\Functions.c(2050): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(2051): warning:  #223-D: function "GUI_RectangleFill" declared implicitly
+User\Functions.c(2053): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(2082): warning:  #223-D: function "Data_Get_Once" declared implicitly
+User\Functions.c(2091): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(2092): warning:  #223-D: function "GUI_RectangleFill" declared implicitly
+User\Functions.c(2094): warning:  #223-D: function "DisText" declared implicitly
+compiling PCF8563_I2c.c...
+User\extern_variables.h(57): warning:  #1295-D: Deprecated declaration RTC_Configuration - give arg types
+User\extern_variables.h(110): warning:  #1295-D: Deprecated declaration ScreenDataRecv_Process - give arg types
+User\24C08_PCF8563_I2c.h(23): warning:  #1295-D: Deprecated declaration PCF8563_I2C_Init - give arg types
+User\24C08_PCF8563_I2c.h(57): warning:  #1295-D: Deprecated declaration _24C08_I2C_Init - give arg types
+User\24C08_PCF8563_I2c.h(64): warning:  #1-D: last line of file ends without a newline
+User\PCF8563_I2c.c(37): warning:  #223-D: function "Delay_us" declared implicitly
+User\PCF8563_I2c.c(49): warning:  #223-D: function "Delay_us" declared implicitly
+User\PCF8563_I2c.c(64): warning:  #223-D: function "Delay_us" declared implicitly
+User\PCF8563_I2c.c(80): warning:  #223-D: function "Delay_us" declared implicitly
+User\PCF8563_I2c.c(95): warning:  #223-D: function "Delay_us" declared implicitly
+User\PCF8563_I2c.c(107): warning:  #223-D: function "Delay_us" declared implicitly
+User\PCF8563_I2c.c(125): warning:  #223-D: function "Delay_us" declared implicitly
+User\PCF8563_I2c.c(137): warning:  #223-D: function "Delay_us" declared implicitly
+compiling 24C08_I2c.c...
+User\extern_variables.h(57): warning:  #1295-D: Deprecated declaration RTC_Configuration - give arg types
+User\extern_variables.h(110): warning:  #1295-D: Deprecated declaration ScreenDataRecv_Process - give arg types
+User\24C08_PCF8563_I2c.h(23): warning:  #1295-D: Deprecated declaration PCF8563_I2C_Init - give arg types
+User\24C08_PCF8563_I2c.h(57): warning:  #1295-D: Deprecated declaration _24C08_I2C_Init - give arg types
+User\24C08_PCF8563_I2c.h(64): warning:  #1-D: last line of file ends without a newline
+User\24C08_I2c.c(46): warning:  #223-D: function "Delay_ms" declared implicitly
+User\24C08_I2c.c(67): warning:  #223-D: function "Delay_ms" declared implicitly
+User\24C08_I2c.c(93): warning:  #223-D: function "Delay_ms" declared implicitly
+User\24C08_I2c.c(112): warning:  #223-D: function "Delay_ms" declared implicitly
+User\24C08_I2c.c(139): warning:  #223-D: function "Delay_ms" declared implicitly
+User\24C08_I2c.c(164): warning:  #223-D: function "Delay_ms" declared implicitly
+User\24C08_I2c.c(193): warning:  #223-D: function "Delay_us" declared implicitly
+User\24C08_I2c.c(205): warning:  #223-D: function "Delay_us" declared implicitly
+User\24C08_I2c.c(220): warning:  #223-D: function "Delay_us" declared implicitly
+User\24C08_I2c.c(233): warning:  #223-D: function "Delay_us" declared implicitly
+User\24C08_I2c.c(245): warning:  #223-D: function "Delay_us" declared implicitly
+User\24C08_I2c.c(268): warning:  #223-D: function "Delay_us" declared implicitly
+User\24C08_I2c.c(274): warning:  #223-D: function "Delay_us" declared implicitly
+User\24C08_I2c.c(286): warning:  #223-D: function "Delay_us" declared implicitly
+compiling language.c...
+compiling Fault_test.c...
+User\extern_variables.h(57): warning:  #1295-D: Deprecated declaration RTC_Configuration - give arg types
+User\extern_variables.h(110): warning:  #1295-D: Deprecated declaration ScreenDataRecv_Process - give arg types
+User\Fault_test.c(6): warning:  #1295-D: Deprecated declaration Data_Save_Fault - give arg types
+User\Fault_test.c(21): warning:  #223-D: function "Delay_ms" declared implicitly
+User\Fault_test.c(22): warning:  #223-D: function "_24C08_I2C_HalfwordRead" declared implicitly
+User\Fault_test.c(35): warning:  #223-D: function "FSMC_SRAM_WriteStruct" declared implicitly
+User\Fault_test.c(37): warning:  #223-D: function "_24C08_I2C_HalfwordWrite" declared implicitly
+User\Fault_test.c(61): warning:  #223-D: function "FSMC_SRAM_ReadStruct" declared implicitly
+compiling Disable_test .c...
+User\extern_variables.h(57): warning:  #1295-D: Deprecated declaration RTC_Configuration - give arg types
+User\extern_variables.h(110): warning:  #1295-D: Deprecated declaration ScreenDataRecv_Process - give arg types
+User\Disable_test .c(6): warning:  #1295-D: Deprecated declaration Data_Save_Disable - give arg types
+User\Disable_test .c(21): warning:  #223-D: function "Delay_ms" declared implicitly
+User\Disable_test .c(22): warning:  #223-D: function "_24C08_I2C_HalfwordRead" declared implicitly
+User\Disable_test .c(35): warning:  #223-D: function "FSMC_SRAM_WriteStruct" declared implicitly
+User\Disable_test .c(37): warning:  #223-D: function "_24C08_I2C_HalfwordWrite" declared implicitly
+User\Disable_test .c(61): warning:  #223-D: function "FSMC_SRAM_ReadStruct" declared implicitly
+linking...
+Program Size: Code=38018 RO-data=4362 RW-data=1164 ZI-data=1692  
+FromELF: creating hex file...
+"Huohuaarm.axf" - 0 Error(s), 298 Warning(s).
+Load "E:\\stm32»ð»¨Ï¨Ãð\\stm32»ð»¨Ï¨ÃðTEST1\\Huohuaarm.AXF" 
+Internal DLL Error
+Build target 'Target 1'
+assembling cortexm3_macro.s...
+assembling stm32f10x_vector.s...
+compiling main.c...
+User\extern_variables.h(57): warning:  #1295-D: Deprecated declaration RTC_Configuration - give arg types
+User\extern_variables.h(110): warning:  #1295-D: Deprecated declaration ScreenDataRecv_Process - give arg types
+User\Screen.h(30): warning:  #1295-D: Deprecated declaration SendBeginCMD - give arg types
+User\Screen.h(38): warning:  #1295-D: Deprecated declaration SendEndCmd - give arg types
+User\Screen.h(81): warning:  #1295-D: Deprecated declaration GUI_CleanScreen - give arg types
+User\Screen.h(361): warning:  #1295-D: Deprecated declaration SetTouchScreen_Adj - give arg types
+User\Screen.h(369): warning:  #1295-D: Deprecated declaration TestTouchScreen - give arg types
+User\main.c(27): warning:  #1295-D: Deprecated declaration RTC_Display - give arg types
+User\main.c(73): warning:  #223-D: function "PCF8563_I2C_Init" declared implicitly
+User\main.c(76): warning:  #223-D: function "_24C08_I2C_Init" declared implicitly
+User\main.c(83): warning:  #223-D: function "Power_on_Init" declared implicitly
+User\main.c(84): warning:  #223-D: function "_24C08_I2C_HalfwordWrite" declared implicitly
+User\main.c(86): warning:  #223-D: function "Power_on_self_Test" declared implicitly
+User\main.c(110): warning:  #223-D: function "ScreenInit" declared implicitly
+User\main.c(118): warning:  #223-D: function "Screen_update" declared implicitly
+User\main.c(180): warning:  #177-D: variable "EXTI_InitStructure" was declared but never referenced
+User\main.c(181): warning:  #177-D: variable "HSEStartUpStatus" was declared but never referenced
+User\main.c(492): warning:  #223-D: function "itoa" declared implicitly
+User\main.c(493): warning:  #223-D: function "itoaD" declared implicitly
+User\main.c(508): warning:  #223-D: function "itoa" declared implicitly
+User\main.c(509): warning:  #223-D: function "itoaD" declared implicitly
+User\main.c(514): warning:  #223-D: function "itoaD" declared implicitly
+compiling stm32f10x_it.c...
+User\extern_variables.h(57): warning:  #1295-D: Deprecated declaration RTC_Configuration - give arg types
+User\extern_variables.h(110): warning:  #1295-D: Deprecated declaration ScreenDataRecv_Process - give arg types
+User\stm32f10x_it.c(569): warning:  #223-D: function "_24C08_I2C_HalfwordRead" declared implicitly
+compiling fsmc_cpld_sram.c...
+User\extern_variables.h(57): warning:  #1295-D: Deprecated declaration RTC_Configuration - give arg types
+User\extern_variables.h(110): warning:  #1295-D: Deprecated declaration ScreenDataRecv_Process - give arg types
+compiling Spark_test.c...
+User\extern_variables.h(57): warning:  #1295-D: Deprecated declaration RTC_Configuration - give arg types
+User\extern_variables.h(110): warning:  #1295-D: Deprecated declaration ScreenDataRecv_Process - give arg types
+User\Spark_test.c(19): warning:  #1295-D: Deprecated declaration Water_Spray - give arg types
+User\Spark_test.c(22): warning:  #1295-D: Deprecated declaration Data_Get_All - give arg types
+User\Spark_test.c(182): warning:  #223-D: function "Delay_ms" declared implicitly
+User\Spark_test.c(183): warning:  #223-D: function "_24C08_I2C_HalfwordRead" declared implicitly
+User\Spark_test.c(196): warning:  #223-D: function "FSMC_SRAM_WriteStruct" declared implicitly
+User\Spark_test.c(198): warning:  #223-D: function "_24C08_I2C_HalfwordWrite" declared implicitly
+User\Spark_test.c(224): warning:  #223-D: function "FSMC_SRAM_ReadStruct" declared implicitly
+User\Spark_test.c(239): warning:  #68-D: integer conversion resulted in a change of sign
+compiling Params.c...
+User\extern_variables.h(57): warning:  #1295-D: Deprecated declaration RTC_Configuration - give arg types
+User\extern_variables.h(110): warning:  #1295-D: Deprecated declaration ScreenDataRecv_Process - give arg types
+compiling Flash_operation.c...
+User\extern_variables.h(57): warning:  #1295-D: Deprecated declaration RTC_Configuration - give arg types
+User\extern_variables.h(110): warning:  #1295-D: Deprecated declaration ScreenDataRecv_Process - give arg types
+compiling Rtc_operation.c...
+User\extern_variables.h(57): warning:  #1295-D: Deprecated declaration RTC_Configuration - give arg types
+User\extern_variables.h(110): warning:  #1295-D: Deprecated declaration ScreenDataRecv_Process - give arg types
+User\24C08_PCF8563_I2c.h(23): warning:  #1295-D: Deprecated declaration PCF8563_I2C_Init - give arg types
+User\24C08_PCF8563_I2c.h(57): warning:  #1295-D: Deprecated declaration _24C08_I2C_Init - give arg types
+User\24C08_PCF8563_I2c.h(64): warning:  #1-D: last line of file ends without a newline
+compiling Screen.c...
+User\Screen.h(30): warning:  #1295-D: Deprecated declaration SendBeginCMD - give arg types
+User\Screen.h(38): warning:  #1295-D: Deprecated declaration SendEndCmd - give arg types
+User\Screen.h(81): warning:  #1295-D: Deprecated declaration GUI_CleanScreen - give arg types
+User\Screen.h(361): warning:  #1295-D: Deprecated declaration SetTouchScreen_Adj - give arg types
+User\Screen.h(369): warning:  #1295-D: Deprecated declaration TestTouchScreen - give arg types
+User\Screen.c(1297): warning:  #1-D: last line of file ends without a newline
+compiling Functions.c...
+User\extern_variables.h(57): warning:  #1295-D: Deprecated declaration RTC_Configuration - give arg types
+User\extern_variables.h(110): warning:  #1295-D: Deprecated declaration ScreenDataRecv_Process - give arg types
+User\Functions.c(30): warning:  #1295-D: Deprecated declaration TextProcess - give arg types
+User\Functions.c(31): warning:  #1295-D: Deprecated declaration ButtonProcess - give arg types
+User\Functions.c(32): warning:  #1295-D: Deprecated declaration itoa - give arg types
+User\Functions.c(33): warning:  #1295-D: Deprecated declaration itoaD - give arg types
+User\Functions.c(34): warning:  #1295-D: Deprecated declaration itoaT - give arg types
+User\Functions.c(35): warning:  #1295-D: Deprecated declaration itoaF - give arg types
+User\Functions.c(36): warning:  #1295-D: Deprecated declaration Alarm_Display_A - give arg types
+User\Functions.c(37): warning:  #1295-D: Deprecated declaration Alarm_Display_B - give arg types
+User\Functions.c(38): warning:  #1295-D: Deprecated declaration Fault_Display_A - give arg types
+User\Functions.c(39): warning:  #1295-D: Deprecated declaration Disable_Display_A - give arg types
+User\Functions.c(99): warning:  #223-D: function "_24C08_I2C_ByteRead" declared implicitly
+User\Functions.c(100): warning:  #223-D: function "Delay_ms" declared implicitly
+User\Functions.c(101): warning:  #223-D: function "_24C08_I2C_BufferRead" declared implicitly
+User\Functions.c(104): warning:  #223-D: function "WriteLayer" declared implicitly
+User\Functions.c(110): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(111): warning:  #223-D: function "GUI_RectangleFill" declared implicitly
+User\Functions.c(114): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(128): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(129): warning:  #223-D: function "GUI_RectangleFill" declared implicitly
+User\Functions.c(132): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(139): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(140): warning:  #223-D: function "GUI_RectangleFill" declared implicitly
+User\Functions.c(147): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(148): warning:  #223-D: function "DisArea_Image" declared implicitly
+User\Functions.c(164): warning:  #223-D: function "DisplyLayer" declared implicitly
+User\Functions.c(165): warning:  #223-D: function "CopyLayer" declared implicitly
+User\Functions.c(173): warning:  #186-D: pointless comparison of unsigned integer with zero
+User\Functions.c(177): warning:  #223-D: function "RTC_Display" declared implicitly
+User\Functions.c(178): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(179): warning:  #223-D: function "GUI_RectangleFill" declared implicitly
+User\Functions.c(181): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(185): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(186): warning:  #223-D: function "GUI_RectangleFill" declared implicitly
+User\Functions.c(188): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(196): warning:  #186-D: pointless comparison of unsigned integer with zero
+User\Functions.c(196): warning:  #186-D: pointless comparison of unsigned integer with zero
+User\Functions.c(196): warning:  #186-D: pointless comparison of unsigned integer with zero
+User\Functions.c(201): warning:  #223-D: function "RTC_Display" declared implicitly
+User\Functions.c(202): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(203): warning:  #223-D: function "GUI_RectangleFill" declared implicitly
+User\Functions.c(205): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(209): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(210): warning:  #223-D: function "GUI_RectangleFill" declared implicitly
+User\Functions.c(212): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(220): warning:  #223-D: function "_24C08_I2C_ByteRead" declared implicitly
+User\Functions.c(221): warning:  #223-D: function "Delay_ms" declared implicitly
+User\Functions.c(222): warning:  #223-D: function "_24C08_I2C_BufferRead" declared implicitly
+User\Functions.c(226): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(227): warning:  #223-D: function "GUI_RectangleFill" declared implicitly
+User\Functions.c(230): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(237): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(238): warning:  #223-D: function "GUI_RectangleFill" declared implicitly
+User\Functions.c(241): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(246): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+User\Functions.c(247): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(248): warning:  #223-D: function "GUI_RectangleFill" declared implicitly
+User\Functions.c(251): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(259): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "const char *"
+User\Functions.c(260): warning:  #223-D: function "_24C08_I2C_ByteWrite" declared implicitly
+User\Functions.c(262): warning:  #223-D: function "_24C08_I2C_PageWrite" declared implicitly
+User\Functions.c(290): warning:  #174-D: expression has no effect
+User\Functions.c(297): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(298): warning:  #223-D: function "GUI_RectangleFill" declared implicitly
+User\Functions.c(304): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(305): warning:  #223-D: function "_24C08_I2C_HalfwordWrite" declared implicitly
+User\Functions.c(80): warning:  #177-D: variable "Subtype" was declared but never referenced
+User\Functions.c(81): warning:  #177-D: variable "Status" was declared but never referenced
+User\Functions.c(390): warning:  #186-D: pointless comparison of unsigned integer with zero
+User\Functions.c(477): warning:  #223-D: function "WriteLayer" declared implicitly
+User\Functions.c(478): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(479): warning:  #223-D: function "GUI_RectangleFill" declared implicitly
+User\Functions.c(482): warning:  #223-D: function "DisArea_Image" declared implicitly
+User\Functions.c(483): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(492): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(497): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(503): warning:  #223-D: function "DisplyLayer" declared implicitly
+User\Functions.c(511): warning:  #223-D: function "Data_Get_Once" declared implicitly
+User\Functions.c(571): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(575): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(600): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(637): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(641): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(674): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(678): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(867): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(868): warning:  #223-D: function "GUI_Line" declared implicitly
+User\Functions.c(892): warning:  #223-D: function "_24C08_I2C_HalfwordRead" declared implicitly
+User\Functions.c(915): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(916): warning:  #223-D: function "GUI_Line" declared implicitly
+User\Functions.c(1029): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1030): warning:  #223-D: function "GUI_Line" declared implicitly
+User\Functions.c(1057): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1058): warning:  #223-D: function "GUI_Line" declared implicitly
+User\Functions.c(1080): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1081): warning:  #223-D: function "GUI_Line" declared implicitly
+User\Functions.c(1138): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1143): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1173): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1211): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1215): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1248): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1252): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1306): warning:  #223-D: function "_24C08_I2C_HalfwordWrite" declared implicitly
+User\Functions.c(1312): warning:  #223-D: function "GUI_CircleFill" declared implicitly
+User\Functions.c(1325): warning:  #223-D: function "CopyLayer" declared implicitly
+User\Functions.c(1365): warning:  #223-D: function "Delay_ms" declared implicitly
+User\Functions.c(1382): warning:  #223-D: function "GUI_CircleFill" declared implicitly
+User\Functions.c(1383): warning:  #223-D: function "_24C08_I2C_HalfwordRead" declared implicitly
+User\Functions.c(1384): warning:  #223-D: function "Data_Save_Fault" declared implicitly
+User\Functions.c(1385): warning:  #223-D: function "_24C08_I2C_HalfwordWrite" declared implicitly
+User\Functions.c(1387): warning:  #223-D: function "SetTextView" declared implicitly
+User\Functions.c(1394): warning:  #223-D: function "GUI_CircleFill" declared implicitly
+User\Functions.c(1396): warning:  #223-D: function "_24C08_I2C_HalfwordWrite" declared implicitly
+User\Functions.c(1398): warning:  #223-D: function "SetTextView" declared implicitly
+User\Functions.c(1401): warning:  #223-D: function "CopyLayer" declared implicitly
+User\Functions.c(1473): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1479): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1489): warning:  #223-D: function "_24C08_I2C_HalfwordWrite" declared implicitly
+User\Functions.c(1501): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1509): warning:  #223-D: function "_24C08_I2C_HalfwordWrite" declared implicitly
+User\Functions.c(1520): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1550): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1556): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1566): warning:  #223-D: function "_24C08_I2C_HalfwordWrite" declared implicitly
+User\Functions.c(1567): warning:  #223-D: function "SetTouchScreen" declared implicitly
+User\Functions.c(1579): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1587): warning:  #223-D: function "_24C08_I2C_HalfwordWrite" declared implicitly
+User\Functions.c(1588): warning:  #223-D: function "SetTouchScreen" declared implicitly
+User\Functions.c(1599): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1652): warning:  #223-D: function "_24C08_I2C_HalfwordWrite" declared implicitly
+User\Functions.c(1658): warning:  #223-D: function "GUI_CircleFill" declared implicitly
+User\Functions.c(1668): warning:  #223-D: function "SetTextView" declared implicitly
+User\Functions.c(1670): warning:  #223-D: function "CopyLayer" declared implicitly
+User\Functions.c(1713): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1719): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1729): warning:  #223-D: function "_24C08_I2C_HalfwordWrite" declared implicitly
+User\Functions.c(1741): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1744): warning:  #223-D: function "SetTextView" declared implicitly
+User\Functions.c(1752): warning:  #223-D: function "_24C08_I2C_HalfwordWrite" declared implicitly
+User\Functions.c(1754): warning:  #223-D: function "Data_Save_Disable" declared implicitly
+User\Functions.c(1766): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1768): warning:  #223-D: function "SetTextView" declared implicitly
+User\Functions.c(1788): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(1789): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(1795): warning:  #223-D: function "Delay_ms" declared implicitly
+User\Functions.c(1804): warning:  #223-D: function "_24C08_I2C_HalfwordRead" declared implicitly
+User\Functions.c(1805): warning:  #223-D: function "Data_Save_Fault" declared implicitly
+User\Functions.c(1806): warning:  #223-D: function "_24C08_I2C_HalfwordWrite" declared implicitly
+User\Functions.c(1811): warning:  #223-D: function "_24C08_I2C_HalfwordRead" declared implicitly
+User\Functions.c(1830): warning:  #223-D: function "_24C08_I2C_HalfwordWrite" declared implicitly
+User\Functions.c(1831): warning:  #223-D: function "_24C08_I2C_PageWrite" declared implicitly
+User\Functions.c(1832): warning:  #223-D: function "_24C08_I2C_ByteWrite" declared implicitly
+User\Functions.c(1834): warning:  #223-D: function "_24C08_I2C_HalfwordRead" declared implicitly
+User\Functions.c(1843): warning:  #223-D: function "WriteLayer" declared implicitly
+User\Functions.c(1845): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(1846): warning:  #223-D: function "GUI_RectangleFill" declared implicitly
+User\Functions.c(1853): warning:  #223-D: function "GUI_CircleFill" declared implicitly
+User\Functions.c(1858): warning:  #223-D: function "GUI_CircleFill" declared implicitly
+User\Functions.c(1864): warning:  #223-D: function "GUI_CircleFill" declared implicitly
+User\Functions.c(1866): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(1871): warning:  #223-D: function "GUI_CircleFill" declared implicitly
+User\Functions.c(1873): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(1875): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(1879): warning:  #223-D: function "SetTextView" declared implicitly
+User\Functions.c(1883): warning:  #223-D: function "DisArea_Image" declared implicitly
+User\Functions.c(1886): warning:  #223-D: function "DisplyLayer" declared implicitly
+User\Functions.c(1887): warning:  #223-D: function "CopyLayer" declared implicitly
+User\Functions.c(1901): warning:  #223-D: function "WriteLayer" declared implicitly
+User\Functions.c(1903): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(1904): warning:  #223-D: function "GUI_RectangleFill" declared implicitly
+User\Functions.c(1907): warning:  #223-D: function "_24C08_I2C_HalfwordRead" declared implicitly
+User\Functions.c(1911): warning:  #223-D: function "GUI_CircleFill" declared implicitly
+User\Functions.c(1916): warning:  #223-D: function "GUI_CircleFill" declared implicitly
+User\Functions.c(1920): warning:  #223-D: function "SetTextView" declared implicitly
+User\Functions.c(1922): warning:  #223-D: function "DisArea_Image" declared implicitly
+User\Functions.c(1924): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(1941): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1946): warning:  #223-D: function "GUI_Rectangle" declared implicitly
+User\Functions.c(1953): warning:  #223-D: function "DisplyLayer" declared implicitly
+User\Functions.c(1954): warning:  #223-D: function "CopyLayer" declared implicitly
+User\Functions.c(1967): warning:  #223-D: function "Data_Get_Once_Fault" declared implicitly
+User\Functions.c(1976): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(1977): warning:  #223-D: function "GUI_RectangleFill" declared implicitly
+User\Functions.c(1979): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(2004): warning:  #223-D: function "Data_Get_Once_Disable" declared implicitly
+User\Functions.c(2013): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(2014): warning:  #223-D: function "GUI_RectangleFill" declared implicitly
+User\Functions.c(2016): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(2041): warning:  #223-D: function "Data_Get_Once" declared implicitly
+User\Functions.c(2050): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(2051): warning:  #223-D: function "GUI_RectangleFill" declared implicitly
+User\Functions.c(2053): warning:  #223-D: function "DisText" declared implicitly
+User\Functions.c(2082): warning:  #223-D: function "Data_Get_Once" declared implicitly
+User\Functions.c(2091): warning:  #223-D: function "SetFcolor" declared implicitly
+User\Functions.c(2092): warning:  #223-D: function "GUI_RectangleFill" declared implicitly
+User\Functions.c(2094): warning:  #223-D: function "DisText" declared implicitly
+compiling PCF8563_I2c.c...
+User\extern_variables.h(57): warning:  #1295-D: Deprecated declaration RTC_Configuration - give arg types
+User\extern_variables.h(110): warning:  #1295-D: Deprecated declaration ScreenDataRecv_Process - give arg types
+User\24C08_PCF8563_I2c.h(23): warning:  #1295-D: Deprecated declaration PCF8563_I2C_Init - give arg types
+User\24C08_PCF8563_I2c.h(57): warning:  #1295-D: Deprecated declaration _24C08_I2C_Init - give arg types
+User\24C08_PCF8563_I2c.h(64): warning:  #1-D: last line of file ends without a newline
+User\PCF8563_I2c.c(37): warning:  #223-D: function "Delay_us" declared implicitly
+User\PCF8563_I2c.c(49): warning:  #223-D: function "Delay_us" declared implicitly
+User\PCF8563_I2c.c(64): warning:  #223-D: function "Delay_us" declared implicitly
+User\PCF8563_I2c.c(80): warning:  #223-D: function "Delay_us" declared implicitly
+User\PCF8563_I2c.c(95): warning:  #223-D: function "Delay_us" declared implicitly
+User\PCF8563_I2c.c(107): warning:  #223-D: function "Delay_us" declared implicitly
+User\PCF8563_I2c.c(125): warning:  #223-D: function "Delay_us" declared implicitly
+User\PCF8563_I2c.c(137): warning:  #223-D: function "Delay_us" declared implicitly
+compiling 24C08_I2c.c...
+User\extern_variables.h(57): warning:  #1295-D: Deprecated declaration RTC_Configuration - give arg types
+User\extern_variables.h(110): warning:  #1295-D: Deprecated declaration ScreenDataRecv_Process - give arg types
+User\24C08_PCF8563_I2c.h(23): warning:  #1295-D: Deprecated declaration PCF8563_I2C_Init - give arg types
+User\24C08_PCF8563_I2c.h(57): warning:  #1295-D: Deprecated declaration _24C08_I2C_Init - give arg types
+User\24C08_PCF8563_I2c.h(64): warning:  #1-D: last line of file ends without a newline
+User\24C08_I2c.c(46): warning:  #223-D: function "Delay_ms" declared implicitly
+User\24C08_I2c.c(67): warning:  #223-D: function "Delay_ms" declared implicitly
+User\24C08_I2c.c(93): warning:  #223-D: function "Delay_ms" declared implicitly
+User\24C08_I2c.c(112): warning:  #223-D: function "Delay_ms" declared implicitly
+User\24C08_I2c.c(139): warning:  #223-D: function "Delay_ms" declared implicitly
+User\24C08_I2c.c(164): warning:  #223-D: function "Delay_ms" declared implicitly
+User\24C08_I2c.c(193): warning:  #223-D: function "Delay_us" declared implicitly
+User\24C08_I2c.c(205): warning:  #223-D: function "Delay_us" declared implicitly
+User\24C08_I2c.c(220): warning:  #223-D: function "Delay_us" declared implicitly
+User\24C08_I2c.c(233): warning:  #223-D: function "Delay_us" declared implicitly
+User\24C08_I2c.c(245): warning:  #223-D: function "Delay_us" declared implicitly
+User\24C08_I2c.c(268): warning:  #223-D: function "Delay_us" declared implicitly
+User\24C08_I2c.c(274): warning:  #223-D: function "Delay_us" declared implicitly
+User\24C08_I2c.c(286): warning:  #223-D: function "Delay_us" declared implicitly
+compiling language.c...
+compiling Fault_test.c...
+User\extern_variables.h(57): warning:  #1295-D: Deprecated declaration RTC_Configuration - give arg types
+User\extern_variables.h(110): warning:  #1295-D: Deprecated declaration ScreenDataRecv_Process - give arg types
+User\Fault_test.c(6): warning:  #1295-D: Deprecated declaration Data_Save_Fault - give arg types
+User\Fault_test.c(21): warning:  #223-D: function "Delay_ms" declared implicitly
+User\Fault_test.c(22): warning:  #223-D: function "_24C08_I2C_HalfwordRead" declared implicitly
+User\Fault_test.c(35): warning:  #223-D: function "FSMC_SRAM_WriteStruct" declared implicitly
+User\Fault_test.c(37): warning:  #223-D: function "_24C08_I2C_HalfwordWrite" declared implicitly
+User\Fault_test.c(61): warning:  #223-D: function "FSMC_SRAM_ReadStruct" declared implicitly
+compiling Disable_test .c...
+User\extern_variables.h(57): warning:  #1295-D: Deprecated declaration RTC_Configuration - give arg types
+User\extern_variables.h(110): warning:  #1295-D: Deprecated declaration ScreenDataRecv_Process - give arg types
+User\Disable_test .c(6): warning:  #1295-D: Deprecated declaration Data_Save_Disable - give arg types
+User\Disable_test .c(21): warning:  #223-D: function "Delay_ms" declared implicitly
+User\Disable_test .c(22): warning:  #223-D: function "_24C08_I2C_HalfwordRead" declared implicitly
+User\Disable_test .c(35): warning:  #223-D: function "FSMC_SRAM_WriteStruct" declared implicitly
+User\Disable_test .c(37): warning:  #223-D: function "_24C08_I2C_HalfwordWrite" declared implicitly
+User\Disable_test .c(61): warning:  #223-D: function "FSMC_SRAM_ReadStruct" declared implicitly
+linking...
+Program Size: Code=38018 RO-data=4362 RW-data=1164 ZI-data=1692  
+FromELF: creating hex file...
+"Huohuaarm.axf" - 0 Error(s), 298 Warning(s).
+Load "E:\\stm32»ð»¨Ï¨Ãð\\stm32»ð»¨Ï¨ÃðTEST1\\Huohuaarm.AXF" 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...

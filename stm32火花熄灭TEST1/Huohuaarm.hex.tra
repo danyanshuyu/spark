@@ -1,0 +1,29 @@
+*** Creating Trace Output File 'Huohuaarm.hex.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '".\FWlib\STM32F10xR.LIB"'
+### List of Objects: adding '"cortexm3_macro.o"'
+### List of Objects: adding '"stm32f10x_vector.o"'
+### List of Objects: adding '"main.o"'
+### List of Objects: adding '"stm32f10x_it.o"'
+### List of Objects: adding '"fsmc_cpld_sram.o"'
+### List of Objects: adding '"spark_test.o"'
+### List of Objects: adding '"params.o"'
+### List of Objects: adding '"flash_operation.o"'
+### List of Objects: adding '"rtc_operation.o"'
+### List of Objects: adding '"screen.o"'
+### List of Objects: adding '"functions.o"'
+### ADS-LD Command completed:
+--cpu Cortex-M3 ".\FWlib\STM32F10xR.LIB" "cortexm3_macro.o" "stm32f10x_vector.o" "main.o" "stm32f10x_it.o" "fsmc_cpld_sram.o" "spark_test.o" "params.o" "flash_operation.o" "rtc_operation.o" "screen.o" "functions.o" --library_type=microlib --ro-base 0x08000000 --entry 0x08000000 --rw-base 0x20000000 --entry Reset_Handler --first __Vectors --strict --autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\Huohuaarm.map" -o "Huohuaarm.hex.axf"### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: 'Huohuaarm.hex.axf'
+### ADS-LD Command File: 'Huohuaarm.hex.lnp'
+### Checking for dirty Components...
+### Creating CmdFile 'Huohuaarm.hex.lnp', Handle=0x000006E8
+### Writing '.lnp' file
+### ADS-LD Command file 'Huohuaarm.hex.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.

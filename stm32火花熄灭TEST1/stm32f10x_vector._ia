@@ -1,0 +1,1 @@
+--cpu Cortex-M3 -g --apcs=interwork --pd "__MICROLIB SETA 1" -I "C:\Program Files (x86)\keil\ARM\INC" -I "C:\Program Files (x86)\keil\ARM\INC\ST\STM32F10x" --list ".\stm32f10x_vector.lst" --xref -o "stm32f10x_vector.o" --depend "stm32f10x_vector.d" "Startup\stm32f10x_vector.s"

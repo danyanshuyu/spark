@@ -1,0 +1,1 @@
+-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I "C:\Program Files (x86)\keil\ARM\INC" -I "C:\Program Files (x86)\keil\ARM\INC\ST\STM32F10x" -o "24c08_i2c.o" --omf_browse "24c08_i2c.crf" --depend "24c08_i2c.d" "User\24C08_I2c.c"
