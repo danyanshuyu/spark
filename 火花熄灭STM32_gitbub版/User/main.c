@@ -136,7 +136,6 @@ int main(void)
 				    Poweron_TIM2_Enable_Cut = 0;
 					Poweron_TIM2_Enable_Flag = 1;
 				}
-
 			}
 
 			if(Spray_Flag== 1)				//喷水持续一段时间后关闭 单位：秒

@@ -33,7 +33,6 @@ _DATA_SAVE Save_Info;
 _DATA_SAVE Get_Info;
 _DATA_SAVE_FAULT Save_Fault_Info;
 _DATA_SAVE_FAULT Get_Fault_Info;
-
 _DATA_SAVE_DISABLE Save_Disable_Info;
 _DATA_SAVE_DISABLE Get_Disable_Info;				 
 
