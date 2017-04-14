@@ -541,7 +541,7 @@ void TIM2_IRQHandler(void)
 		TIM_ClearITPendingBit(TIM2,TIM_IT_Update);      //清除中断处理位
 
 		
-		//火花检测程序	 //每100ms检测一次
+		//火花检测程序	 //每500ms检测一次
 		if(Single_Flag == 1)
 		{
 			Single_temp1 = FSMC_CPLD_Read(0x11);	     //读出累加器的起始值

@@ -25,7 +25,7 @@
 ### ADS-LD Output File: 'Huohuaarm.axf'
 ### ADS-LD Command File: 'Huohuaarm.lnp'
 ### Checking for dirty Components...
-### Creating CmdFile 'Huohuaarm.lnp', Handle=0x00000398
+### Creating CmdFile 'Huohuaarm.lnp', Handle=0x00000308
 ### Writing '.lnp' file
 ### ADS-LD Command file 'Huohuaarm.lnp' is ready.
 ### ADS-LD: About to start ADS-LD Thread.

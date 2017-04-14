@@ -108,7 +108,7 @@ int main(void)
 	  //FSMC_CPLD_Write(0x55,0x17);	       //测试传感器
 	  //FSMC_CPLD_Write(0x00,0x17);		   //关闭传感器测试信号														
 	  ScreenInit();
-	  SetTouchScreen(1);				   //强制关闭屏幕蜂鸣器
+
 	while(1)
 	{
 
@@ -119,12 +119,6 @@ int main(void)
 			 Screen_update_Flag = 0;	
 		}									
 
-		//按下复位按钮后，立即复位声光报警设备
-		if(Alarm_reset_Flag == 1)
-		{
-			Spray_Flag = 0;
-			FSMC_CPLD_Write(0x00,0x840);
-		}
 
 		//RTC用秒中断显示
 	   	if(TimeDisplay==1)
@@ -370,7 +364,7 @@ void TIM2_Configuration(void)							 //按周期循环检测火花
 	TIM_InternalClockConfig(TIM2);//采用内部时钟给TIM2提供时钟源
 
 	/*初始化定时器*/
-	TIM_TimeBaseStructure.TIM_Period = 1000;//设置计数溢出大小，每计200个产生一个更新事件	 //自动重装周期200*0.5ms=100ms
+	TIM_TimeBaseStructure.TIM_Period = 1000;//设置计数溢出大小，每计1000个产生一个更新事件	 //自动重装周期1000*0.5ms=500ms
 	TIM_TimeBaseStructure.TIM_Prescaler = 36000-1;//7199;//预分频计数值为36000-1，这样计数器时钟为72MHz/36000=2000Hz
 	TIM_TimeBaseStructure.TIM_ClockDivision = 0;  //TIM_CKD_DIV1;设置时钟分割
 	TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;//向上计数

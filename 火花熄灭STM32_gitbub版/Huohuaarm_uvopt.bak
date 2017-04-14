@@ -312,10 +312,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>24</ColumnNumber>
+      <ColumnNumber>119</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>97</TopLine>
-      <CurrentLine>97</CurrentLine>
+      <TopLine>358</TopLine>
+      <CurrentLine>367</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\User\main.c</PathWithFileName>
       <FilenameWithoutPath>main.c</FilenameWithoutPath>
@@ -345,32 +345,13 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>19</ColumnNumber>
+      <ColumnNumber>48</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>539</TopLine>
-      <CurrentLine>548</CurrentLine>
+      <TopLine>2036</TopLine>
+      <CurrentLine>2049</CurrentLine>
       <bDave2>0</bDave2>
-      <PathWithFileName>.\User\stm32f10x_it.c</PathWithFileName>
-      <FilenameWithoutPath>stm32f10x_it.c</FilenameWithoutPath>
-      <WindowPosition>
-        <length>44</length>
-        <flags>0</flags>
-        <showCmd>1</showCmd>
-        <MinPosition>
-          <xPos>-1</xPos>
-          <yPos>-1</yPos>
-        </MinPosition>
-        <MaxPosition>
-          <xPos>-8</xPos>
-          <yPos>-30</yPos>
-        </MaxPosition>
-        <NormalPosition>
-          <Top>75</Top>
-          <Left>75</Left>
-          <Right>1228</Right>
-          <Bottom>450</Bottom>
-        </NormalPosition>
-      </WindowPosition>
+      <PathWithFileName>.\User\Functions.c</PathWithFileName>
+      <FilenameWithoutPath>Functions.c</FilenameWithoutPath>
     </File>
     <File>
       <GroupNumber>3</GroupNumber>
@@ -378,13 +359,13 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>66</ColumnNumber>
+      <ColumnNumber>31</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>1</TopLine>
-      <CurrentLine>5</CurrentLine>
+      <TopLine>539</TopLine>
+      <CurrentLine>554</CurrentLine>
       <bDave2>0</bDave2>
-      <PathWithFileName>.\User\fsmc_cpld_sram.c</PathWithFileName>
-      <FilenameWithoutPath>fsmc_cpld_sram.c</FilenameWithoutPath>
+      <PathWithFileName>.\User\stm32f10x_it.c</PathWithFileName>
+      <FilenameWithoutPath>stm32f10x_it.c</FilenameWithoutPath>
     </File>
     <File>
       <GroupNumber>3</GroupNumber>
@@ -392,17 +373,115 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>31</ColumnNumber>
+      <ColumnNumber>50</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>25</TopLine>
-      <CurrentLine>25</CurrentLine>
+      <TopLine>192</TopLine>
+      <CurrentLine>192</CurrentLine>
+      <bDave2>0</bDave2>
+      <PathWithFileName>.\User\fsmc_cpld_sram.c</PathWithFileName>
+      <FilenameWithoutPath>fsmc_cpld_sram.c</FilenameWithoutPath>
+    </File>
+    <File>
+      <GroupNumber>3</GroupNumber>
+      <FileNumber>8</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <Focus>0</Focus>
+      <ColumnNumber>0</ColumnNumber>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <TopLine>0</TopLine>
+      <CurrentLine>0</CurrentLine>
+      <bDave2>0</bDave2>
+      <PathWithFileName>.\User\PCF8563_I2c.c</PathWithFileName>
+      <FilenameWithoutPath>PCF8563_I2c.c</FilenameWithoutPath>
+    </File>
+    <File>
+      <GroupNumber>3</GroupNumber>
+      <FileNumber>9</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <Focus>0</Focus>
+      <ColumnNumber>0</ColumnNumber>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <TopLine>0</TopLine>
+      <CurrentLine>0</CurrentLine>
+      <bDave2>0</bDave2>
+      <PathWithFileName>.\User\24C08_I2c.c</PathWithFileName>
+      <FilenameWithoutPath>24C08_I2c.c</FilenameWithoutPath>
+    </File>
+    <File>
+      <GroupNumber>3</GroupNumber>
+      <FileNumber>10</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <Focus>0</Focus>
+      <ColumnNumber>0</ColumnNumber>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <TopLine>0</TopLine>
+      <CurrentLine>0</CurrentLine>
+      <bDave2>0</bDave2>
+      <PathWithFileName>.\User\Flash_operation.c</PathWithFileName>
+      <FilenameWithoutPath>Flash_operation.c</FilenameWithoutPath>
+    </File>
+    <File>
+      <GroupNumber>3</GroupNumber>
+      <FileNumber>11</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <Focus>0</Focus>
+      <ColumnNumber>0</ColumnNumber>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <TopLine>0</TopLine>
+      <CurrentLine>0</CurrentLine>
+      <bDave2>0</bDave2>
+      <PathWithFileName>.\User\Rtc_operation.c</PathWithFileName>
+      <FilenameWithoutPath>Rtc_operation.c</FilenameWithoutPath>
+    </File>
+    <File>
+      <GroupNumber>3</GroupNumber>
+      <FileNumber>12</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <Focus>0</Focus>
+      <ColumnNumber>39</ColumnNumber>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <TopLine>187</TopLine>
+      <CurrentLine>202</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\User\Spark_test.c</PathWithFileName>
       <FilenameWithoutPath>Spark_test.c</FilenameWithoutPath>
     </File>
     <File>
       <GroupNumber>3</GroupNumber>
-      <FileNumber>8</FileNumber>
+      <FileNumber>13</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <Focus>0</Focus>
+      <ColumnNumber>0</ColumnNumber>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <TopLine>0</TopLine>
+      <CurrentLine>0</CurrentLine>
+      <bDave2>0</bDave2>
+      <PathWithFileName>.\User\Fault_test.c</PathWithFileName>
+      <FilenameWithoutPath>Fault_test.c</FilenameWithoutPath>
+    </File>
+    <File>
+      <GroupNumber>3</GroupNumber>
+      <FileNumber>14</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <Focus>0</Focus>
+      <ColumnNumber>0</ColumnNumber>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <TopLine>0</TopLine>
+      <CurrentLine>0</CurrentLine>
+      <bDave2>0</bDave2>
+      <PathWithFileName>.\User\Disable_test .c</PathWithFileName>
+      <FilenameWithoutPath>Disable_test .c</FilenameWithoutPath>
+    </File>
+    <File>
+      <GroupNumber>3</GroupNumber>
+      <FileNumber>15</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
@@ -416,91 +495,7 @@
     </File>
     <File>
       <GroupNumber>3</GroupNumber>
-      <FileNumber>9</FileNumber>
-      <FileType>1</FileType>
-      <tvExp>0</tvExp>
-      <Focus>0</Focus>
-      <ColumnNumber>77</ColumnNumber>
-      <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>1</TopLine>
-      <CurrentLine>8</CurrentLine>
-      <bDave2>0</bDave2>
-      <PathWithFileName>.\User\Flash_operation.c</PathWithFileName>
-      <FilenameWithoutPath>Flash_operation.c</FilenameWithoutPath>
-    </File>
-    <File>
-      <GroupNumber>3</GroupNumber>
-      <FileNumber>10</FileNumber>
-      <FileType>1</FileType>
-      <tvExp>0</tvExp>
-      <Focus>0</Focus>
-      <ColumnNumber>53</ColumnNumber>
-      <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>0</TopLine>
-      <CurrentLine>0</CurrentLine>
-      <bDave2>0</bDave2>
-      <PathWithFileName>.\User\Rtc_operation.c</PathWithFileName>
-      <FilenameWithoutPath>Rtc_operation.c</FilenameWithoutPath>
-    </File>
-    <File>
-      <GroupNumber>3</GroupNumber>
-      <FileNumber>11</FileNumber>
-      <FileType>1</FileType>
-      <tvExp>0</tvExp>
-      <Focus>0</Focus>
-      <ColumnNumber>27</ColumnNumber>
-      <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>647</TopLine>
-      <CurrentLine>657</CurrentLine>
-      <bDave2>0</bDave2>
-      <PathWithFileName>.\User\Screen.c</PathWithFileName>
-      <FilenameWithoutPath>Screen.c</FilenameWithoutPath>
-    </File>
-    <File>
-      <GroupNumber>3</GroupNumber>
-      <FileNumber>12</FileNumber>
-      <FileType>1</FileType>
-      <tvExp>0</tvExp>
-      <Focus>0</Focus>
-      <ColumnNumber>35</ColumnNumber>
-      <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>2085</TopLine>
-      <CurrentLine>2104</CurrentLine>
-      <bDave2>0</bDave2>
-      <PathWithFileName>.\User\Functions.c</PathWithFileName>
-      <FilenameWithoutPath>Functions.c</FilenameWithoutPath>
-    </File>
-    <File>
-      <GroupNumber>3</GroupNumber>
-      <FileNumber>13</FileNumber>
-      <FileType>1</FileType>
-      <tvExp>0</tvExp>
-      <Focus>0</Focus>
-      <ColumnNumber>123</ColumnNumber>
-      <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>90</TopLine>
-      <CurrentLine>90</CurrentLine>
-      <bDave2>0</bDave2>
-      <PathWithFileName>.\User\PCF8563_I2c.c</PathWithFileName>
-      <FilenameWithoutPath>PCF8563_I2c.c</FilenameWithoutPath>
-    </File>
-    <File>
-      <GroupNumber>3</GroupNumber>
-      <FileNumber>14</FileNumber>
-      <FileType>1</FileType>
-      <tvExp>0</tvExp>
-      <Focus>0</Focus>
-      <ColumnNumber>25</ColumnNumber>
-      <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>63</TopLine>
-      <CurrentLine>75</CurrentLine>
-      <bDave2>0</bDave2>
-      <PathWithFileName>.\User\24C08_I2c.c</PathWithFileName>
-      <FilenameWithoutPath>24C08_I2c.c</FilenameWithoutPath>
-    </File>
-    <File>
-      <GroupNumber>3</GroupNumber>
-      <FileNumber>15</FileNumber>
+      <FileNumber>16</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
@@ -514,20 +509,6 @@
     </File>
     <File>
       <GroupNumber>3</GroupNumber>
-      <FileNumber>16</FileNumber>
-      <FileType>1</FileType>
-      <tvExp>0</tvExp>
-      <Focus>0</Focus>
-      <ColumnNumber>6</ColumnNumber>
-      <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>13</TopLine>
-      <CurrentLine>13</CurrentLine>
-      <bDave2>0</bDave2>
-      <PathWithFileName>.\User\Fault_test.c</PathWithFileName>
-      <FilenameWithoutPath>Fault_test.c</FilenameWithoutPath>
-    </File>
-    <File>
-      <GroupNumber>3</GroupNumber>
       <FileNumber>17</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
@@ -537,8 +518,8 @@
       <TopLine>0</TopLine>
       <CurrentLine>0</CurrentLine>
       <bDave2>0</bDave2>
-      <PathWithFileName>.\User\Disable_test .c</PathWithFileName>
-      <FilenameWithoutPath>Disable_test .c</FilenameWithoutPath>
+      <PathWithFileName>.\User\Screen.c</PathWithFileName>
+      <FilenameWithoutPath>Screen.c</FilenameWithoutPath>
     </File>
   </Group>
 
@@ -551,8 +532,8 @@
 
   <AlienFiles>
     <PathWithFilename>E:\GITHUB\spark\火花熄灭STM32_gitbub版\User\extern_variables.h</PathWithFilename>
-    <TopLine>70</TopLine>
-    <CurrentLine>79</CurrentLine>
+    <TopLine>38</TopLine>
+    <CurrentLine>51</CurrentLine>
     <Constant>0</Constant>
     <WindowPosition>
       <length>0</length>
@@ -584,21 +565,21 @@
       <Documents>
         <Doc>
           <Name>.\User\main.c</Name>
-          <ColumnNumber>24</ColumnNumber>
-          <TopLine>97</TopLine>
-          <CurrentLine>97</CurrentLine>
+          <ColumnNumber>119</ColumnNumber>
+          <TopLine>358</TopLine>
+          <CurrentLine>367</CurrentLine>
         </Doc>
         <Doc>
           <Name>.\User\Functions.c</Name>
-          <ColumnNumber>35</ColumnNumber>
-          <TopLine>2085</TopLine>
-          <CurrentLine>2104</CurrentLine>
+          <ColumnNumber>48</ColumnNumber>
+          <TopLine>2036</TopLine>
+          <CurrentLine>2049</CurrentLine>
         </Doc>
         <Doc>
           <Name>.\User\stm32f10x_it.c</Name>
-          <ColumnNumber>19</ColumnNumber>
+          <ColumnNumber>31</ColumnNumber>
           <TopLine>539</TopLine>
-          <CurrentLine>548</CurrentLine>
+          <CurrentLine>554</CurrentLine>
         </Doc>
         <Doc>
           <Name>.\User\language.c</Name>
@@ -614,21 +595,21 @@
         </Doc>
         <Doc>
           <Name>User\extern_variables.h</Name>
-          <ColumnNumber>40</ColumnNumber>
-          <TopLine>70</TopLine>
-          <CurrentLine>79</CurrentLine>
+          <ColumnNumber>7</ColumnNumber>
+          <TopLine>38</TopLine>
+          <CurrentLine>51</CurrentLine>
         </Doc>
         <Doc>
           <Name>.\User\Spark_test.c</Name>
-          <ColumnNumber>31</ColumnNumber>
-          <TopLine>25</TopLine>
-          <CurrentLine>25</CurrentLine>
+          <ColumnNumber>39</ColumnNumber>
+          <TopLine>187</TopLine>
+          <CurrentLine>202</CurrentLine>
         </Doc>
         <Doc>
-          <Name>.\User\Fault_test.c</Name>
-          <ColumnNumber>6</ColumnNumber>
-          <TopLine>13</TopLine>
-          <CurrentLine>13</CurrentLine>
+          <Name>.\User\fsmc_cpld_sram.c</Name>
+          <ColumnNumber>50</ColumnNumber>
+          <TopLine>192</TopLine>
+          <CurrentLine>192</CurrentLine>
         </Doc>
       </Documents>
     </MDIGroup>

@@ -179,7 +179,6 @@ void Data_Save(u32 num)
 {
     u16 temp=0;	  
 	_DATA_SAVE *p;
-    Delay_ms(0x58);							  //连续的读写操作之间必须有等待时间，时间过短EEPROM将不能正确读写
 	temp = _24C08_I2C_HalfwordRead(0);		  //读取EEPROM 0地址当前记录的火花事件个数
 	temp++;
 
@@ -260,7 +259,7 @@ void Water_Spray()
 {
 	 if(Alarm_reset_Flag == 1)			      //声光复位按钮按下时，不报警
 	 {
-	 	 Spray_Flag  = 0;	
+     	;	
 	 }
 	 else
 	 {

@@ -476,6 +476,11 @@
               <FileType>1</FileType>
               <FilePath>.\User\Fault_test.c</FilePath>
             </File>
+            <File>
+              <FileName>Disable_test .c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\User\Disable_test .c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

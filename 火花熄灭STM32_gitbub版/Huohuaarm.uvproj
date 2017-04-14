@@ -417,6 +417,11 @@
               <FilePath>.\User\main.c</FilePath>
             </File>
             <File>
+              <FileName>Functions.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\User\Functions.c</FilePath>
+            </File>
+            <File>
               <FileName>stm32f10x_it.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\User\stm32f10x_it.c</FilePath>
@@ -425,36 +430,6 @@
               <FileName>fsmc_cpld_sram.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\User\fsmc_cpld_sram.c</FilePath>
-            </File>
-            <File>
-              <FileName>Spark_test.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\User\Spark_test.c</FilePath>
-            </File>
-            <File>
-              <FileName>Params.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\User\Params.c</FilePath>
-            </File>
-            <File>
-              <FileName>Flash_operation.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\User\Flash_operation.c</FilePath>
-            </File>
-            <File>
-              <FileName>Rtc_operation.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\User\Rtc_operation.c</FilePath>
-            </File>
-            <File>
-              <FileName>Screen.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\User\Screen.c</FilePath>
-            </File>
-            <File>
-              <FileName>Functions.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\User\Functions.c</FilePath>
             </File>
             <File>
               <FileName>PCF8563_I2c.c</FileName>
@@ -467,9 +442,19 @@
               <FilePath>.\User\24C08_I2c.c</FilePath>
             </File>
             <File>
-              <FileName>language.c</FileName>
+              <FileName>Flash_operation.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\User\language.c</FilePath>
+              <FilePath>.\User\Flash_operation.c</FilePath>
+            </File>
+            <File>
+              <FileName>Rtc_operation.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\User\Rtc_operation.c</FilePath>
+            </File>
+            <File>
+              <FileName>Spark_test.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\User\Spark_test.c</FilePath>
             </File>
             <File>
               <FileName>Fault_test.c</FileName>
@@ -480,6 +465,21 @@
               <FileName>Disable_test .c</FileName>
               <FileType>1</FileType>
               <FilePath>.\User\Disable_test .c</FilePath>
+            </File>
+            <File>
+              <FileName>Params.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\User\Params.c</FilePath>
+            </File>
+            <File>
+              <FileName>language.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\User\language.c</FilePath>
+            </File>
+            <File>
+              <FileName>Screen.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\User\Screen.c</FilePath>
             </File>
           </Files>
         </Group>

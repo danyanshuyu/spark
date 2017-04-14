@@ -355,7 +355,11 @@ void ButtonProcess()
 			if(ScreenID == 1 && ControlID == 37 && Status == 0)                //Éù¹â±¨¾¯¸´Î»°´Å¥£¬ÓÉ°´ÏÂ±äÎªµ¯Æð                
 			Alarm_reset_Flag = 0;														   
 			if(ScreenID == 1 && ControlID == 37 && Status == 1)                //Éù¹â±¨¾¯¸´Î»°´Å¥£¬ÓÉµ¯Æð±äÎª°´ÏÂ                
-			Alarm_reset_Flag = 1;														   
+			{
+				Alarm_reset_Flag = 1;
+				Spray_Flag = 0;												   //ÅçË®µ¹¼ÆÊ±¸´Î»
+				FSMC_CPLD_Write(0x00,0x840);								   //°´ÏÂ¸´Î»°´Å¥ºó£¬Á¢¼´¸´Î»Éù¹â±¨¾¯Éè±¸						   
+			}
 
 
 			if(ScreenID == 1 && ControlID == 5)                                
@@ -1564,7 +1568,7 @@ void ButtonProcess()
 				{															   //77 ¿ª¹ØÄÚ²¿À®°È--771 ´ò¿ª°´¼ü·äÃùÆ÷
 					Buzzer_Flag = 1;
 					_24C08_I2C_HalfwordWrite(1,14);							  //±£´æ´ËÊ±×´Ì¬µ½ EEPROM ÓÃÓÚÏÂ´Î¿ª»úÊ¹ÓÃ
-					SetTouchScreen(3);										  
+					SetTouchScreen(19);										  
 					WriteLayer(Layer);
 					SetFcolor(0xFFFF);
 					GUI_RectangleFill(131,1,499,72);
@@ -1585,7 +1589,7 @@ void ButtonProcess()
 				{															   //77 ¿ª¹ØÄÚ²¿À®°È--772 ¹Ø±Õ°´¼ü·äÃùÆ÷
 					Buzzer_Flag = 0;
 					_24C08_I2C_HalfwordWrite(0,14);
-					SetTouchScreen(1);
+					SetTouchScreen(17);
 					WriteLayer(Layer);
 					SetFcolor(0xFFFF);
 					GUI_RectangleFill(131,1,499,72);
@@ -1832,7 +1836,7 @@ void ScreenInit()                                                              /
 	  _24C08_I2C_HalfwordWrite(0,0);			                               //»ð»¨ÊÂ¼þ¼ÆÊýÇå0                       
 	  _24C08_I2C_PageWrite(I2C_Data,16,4);		                               //³õÊ¼ÃÜÂë¶¨Îª1234
 	  _24C08_I2C_ByteWrite(4,32); 				                               //³õÊ¼ÃÜÂë³¤¶È¶¨Îª4Î»
-	  _24C08_I2C_ByteWrite(1,14);											   //·äÃùÆ÷¿ª¹Ø
+	  _24C08_I2C_ByteWrite(1,14);											   //·äÃùÆ÷¿ª
 	  Spark_DANGER_A = _24C08_I2C_HalfwordRead(2);							   //»ñÈ¡EEPROMÖÐÏà¹ØÊý¾ÝÓÃÒÔ³õÊ¼»¯
 	  Spark_DANGER_B = _24C08_I2C_HalfwordRead(4);
 	  Spark_DANGER_B_M = _24C08_I2C_HalfwordRead(6);
@@ -1840,7 +1844,7 @@ void ScreenInit()                                                              /
 	  Spray_TIME = _24C08_I2C_HalfwordRead(10);
 	  Lang_Flag = _24C08_I2C_HalfwordRead(12);
 	  Buzzer_Flag =	_24C08_I2C_HalfwordRead(14);							   
-
+	  Alarm_num = _24C08_I2C_HalfwordRead(0);								   //¶ÁÈ¡µ±Ç°»ð»¨ÊÂ¼þ¼ÇÂ¼¸öÊý
 
 	  WriteLayer(1);					                                       //Ð´Í¼²ãÒ»						
 	   
@@ -1848,7 +1852,7 @@ void ScreenInit()                                                              /
 	  GUI_RectangleFill(131,1,499,72);
       GUI_RectangleFill(0,74,619,380);
 	  GUI_RectangleFill(501,0,619,72);
-	  Alarm_num = _24C08_I2C_HalfwordRead(0);								   //¶ÁÈ¡µ±Ç°»ð»¨ÊÂ¼þ¼ÇÂ¼¸öÊý
+	  
 	  if(Alarm_num != 0)
 	  {
 		  SetFcolor(0xF800);					                                   //ÉèÖÃÇ°¾°ÎªºìÉ« 
@@ -1888,25 +1892,26 @@ void ScreenInit()                                                              /
 	  DisplyLayer(1);					                                       //ÏÔÊ¾Í¼²ãÒ»
 	  CopyLayer(1,2);					                                       //±£ÁôÍ¼²ãÒ»µÄÄÚÈÝµ½Í¼²ã¶þ
 
-	  TIM_Cmd(TIM2,ENABLE);													   //Æô¶¯Ã¿0.1sÒ»´ÎµÄ¶¨Ê±ÖÐ¶Ï
+	  TIM_Cmd(TIM2,ENABLE);													   //Æô¶¯Ã¿0.5sÒ»´ÎµÄ¶¨Ê±ÖÐ¶Ï
 }
 
 void Screen_update()                                                           //ÆÁÄ»Êý¾Ý¸üÐÂÏÔÊ¾³ÌÐò
 {
+	  //¸´Î»¸÷ÏÔÊ¾Ïà¹Ø±êÖ¾Î»
       Menu_FlagStatus = 0;          //²Ëµ¥¼üÈ¡Öµ×´Ì¬£¬È¡Öµ0/1/2/3£¬¶ÔÓ¦4¸ö²Ëµ¥
-	  System_FlagStatus = -1;		//ÏµÍ³Ò»¼¶²Ëµ¥µÄÈ¡Öµ£¬0~7£¬-1Îª³õÊ¼»¯
+	  System_FlagStatus = -1;		//ÏµÍ³Ò»¼¶²Ëµ¥µÄÈ¡Öµ£¬0~7£¬-1Îª³õÊ¼»¯Öµ
 	  LR_FlagStatus = 0;            //×óÓÒ¼ü¼ÆÊý×´Ì¬£¬°´Ò»´ÎÓÒ¼ü¼Ó1£¬°´Ò»´Î×ó¼ü¼õ1
 	  UD_FlagStatus = 0;            //ÉÏÏÂ¼ü¼ÆÊý×´Ì¬£¬°´Ò»´ÎÏÂ¼ü¼Ó1£¬°´Ò»´ÎÉÏ¼ü¼õ1
 	  Button_Dn = 2;			    //¾¯±¨½çÃæÊ±£¬ÉÏÏÂ¼ü°´Ò»´Î¸üÐÂÏÔÊ¾ÁíÍâ2ÌõÐÅÏ¢
-
+	  
+	  Alarm_num = _24C08_I2C_HalfwordRead(0);								   //×îÐÂ»ð»¨ÊÂ¼þÊý¸üÐÂÏÔÊ¾
 
 	  WriteLayer(Layer);					                                   //Ð´Í¼²ã						
 
 	  SetFcolor(0xFFFF);
 	  GUI_RectangleFill(131,1,499,72);
       GUI_RectangleFill(0,74,619,380);
-
-	  Alarm_num = _24C08_I2C_HalfwordRead(0);								   //×îÐÂ»ð»¨ÊÂ¼þÊý¸üÐÂÏÔÊ¾
+	  
 	  if(Alarm_num != 0)
 	  {
 	  SetFcolor(0xF800);					                                   //ÉèÖÃÇ°¾°ÎªºìÉ« 
@@ -1918,8 +1923,8 @@ void Screen_update()                                                           /
 	   GUI_CircleFill(666,80,5);			                                   //±¨¾¯µÆÃð
 	  }
 
-	  itoaT(Alarm_num,JINGBAO_CUT);
-	  SetTextView(1,38,JINGBAO_CUT);
+	  itoaT(Alarm_num,JINGBAO_CUT);											   
+	  SetTextView(1,38,JINGBAO_CUT);										   //»ð»¨ÊÂ¼þ×ÜÊýÏÔÊ¾
 
 	  DisArea_Image(135,16,22,0);
 	  SetFcolor(0);		
@@ -1982,10 +1987,14 @@ void Fault_Display_A(u8 num)					                               //¹ÊÕÏÏÔÊ¾AÇøÓò	
 			DisText(15,147,0,2,YEAR1);
 			DisText(145,115,0,9,"DG");
 			DisText(235,115,0,9,"001");
-			itoaD(Get_Fault_Info.calendar.hour,HOUR1);
-			itoaD(Get_Fault_Info.calendar.min,MIN1);
-			itoaD(Get_Fault_Info.calendar.second+1,SECOND1);
+			itoaD(0,HOUR1);
+			itoaD(0,MIN1);
+			itoaD(0,SECOND1);
+			itoaD(0,YEAR1);
+			itoaD(0,MONTH1);
+			itoaD(0,DATE1);
 			strcat(strcat(strcat(strcat(HOUR1,":"),MIN1),":"),SECOND1);
+			strcat(strcat(strcat(strcat(YEAR1,"."),MONTH1),"."),DATE1);
 			itoaF(Get_Fault_Info.Event_Nr,EVENT_NR);
 			DisText(340,122,0,2,HOUR1);
 			DisText(340,147,0,2,YEAR1);
@@ -2019,10 +2028,14 @@ void Disable_Display_A(u8 num)					                               //¹Ø±ÕÏÔÊ¾AÇøÓ
 			DisText(15,147,0,2,YEAR1);
 			DisText(145,115,0,9,"DG");
 			DisText(235,115,0,9,"001");
-			itoaD(Get_Disable_Info.calendar.hour,HOUR1);
-			itoaD(Get_Disable_Info.calendar.min,MIN1);
-			itoaD(Get_Disable_Info.calendar.second+1,SECOND1);
+			itoaD(0,HOUR1);
+			itoaD(0,MIN1);
+			itoaD(0,SECOND1);
+			itoaD(0,YEAR1);
+			itoaD(0,MONTH1);
+			itoaD(0,DATE1);
 			strcat(strcat(strcat(strcat(HOUR1,":"),MIN1),":"),SECOND1);
+			strcat(strcat(strcat(strcat(YEAR1,"."),MONTH1),"."),DATE1);
 			itoaF(Get_Disable_Info.Event_Nr,EVENT_NR);
 			DisText(340,122,0,2,HOUR1);
 			DisText(340,147,0,2,YEAR1);
@@ -2100,10 +2113,12 @@ void Alarm_Display_B(u8 num)					                               //¾¯±¨ÏÔÊ¾BÇøÓò	
 			DisText(15,267,0,2,YEAR2);
 			DisText(145,235,0,9,"DG");
 			DisText(235,235,0,9,"001");
+
 			itoaD(Get_Info.calendar.hour,HOUR2);
 			itoaD(Get_Info.calendar.min,MIN2);
 			itoaD(Get_Info.calendar.second+5,SECOND2);
 			strcat(strcat(strcat(strcat(HOUR2,":"),MIN2),":"),SECOND2);
+
 			itoaF(Get_Info.Event_Nr,EVENT_NR);
 			DisText(340,242,0,2,HOUR2);
 			DisText(340,267,0,2,YEAR2);

@@ -53,7 +53,7 @@ typedef struct{
 extern _CALENDAR calendar;
 extern void Set_Day_Time(u8 syear,u8 smon,u8 sday);
 extern void Set_Second_Time(u8 hour,u8 min,u8 sec);
-extern void Get_Cur_Time(void);
+extern void Get_Cur_Time();
 extern void RTC_Configuration();
 
 //Flash ²Ù×÷²ÎÊý
