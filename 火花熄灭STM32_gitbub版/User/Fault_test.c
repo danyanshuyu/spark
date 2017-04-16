@@ -4,21 +4,21 @@
 
 
 void Data_Save_Fault();
-void Data_Get_Once_Fault(u8 Num);
+void Data_Get_Once_Fault(u16 Num);
 
 
 /*******************************************************************************
-* 函数名	: void Data_Save(u32 num)
-* 函数描述  : 保留喷水时刻的火花个数和喷水时间
-* 输入参数  : 火花个数
+* 函数名	: void Data_Save_Fault()
+* 函数描述  : 保留故障事件的时间
+* 输入参数  : 无
 * 输出结果  : 无
 * 返回值    : 无	
 *******************************************************************************/
 void Data_Save_Fault()
 {
     u16 temp=0;	  
-	_DATA_SAVE_FAULT *p;
-	temp = _24C08_I2C_HalfwordRead(48);		  //读取EEPROM 48地址当前记录的火花事件个数
+	_DATA_SAVE_END *p;
+	temp = _24C08_I2C_HalfwordRead(48);		  //读取EEPROM 48地址当前记录的故障事件个数
 	temp++;
 	//获取时间
 	Get_Cur_Time();
@@ -38,16 +38,16 @@ void Data_Save_Fault()
 }
 
 /*******************************************************************************
-* 函数名	: void Data_Get()
-* 函数描述  : 从flash获取某一次的喷水时间和火花个数
-* 输入参数  : 保存数据Buffer
+* 函数名	: void Data_Get_Once_Fault(u8 Num)
+* 函数描述  : 从SRAM获取某一次的故障事件的时间
+* 输入参数  : 事件序号
 * 输出结果  : 无
 * 返回值    : 无	
 *******************************************************************************/
-void Data_Get_Once_Fault(u8 Num)
+void Data_Get_Once_Fault(u16 Num)
 {
 	int offset;
-	_DATA_SAVE_FAULT *p;
+	_DATA_SAVE_END *p;
 	p = &Get_Fault_Info;
 	if(Num == 0)
 	{

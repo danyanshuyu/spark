@@ -13,12 +13,13 @@ u8  Cnt_C = 0;			    //C滑动计数器
 u8  Cnt_B_Flag = 0;			//B一段时间第一个single_num不为0标志位,不为0时置1
 u32 Cir_Spark_Sum_B = 0;     //滑动计数B火花总数
 u32 Cir_Spark_Sum_C = 0;     //滑动计数C火花总数
-u32 total_spray_num[1] = {0};		 //总的喷水次数
-//u32 Write_addr = 0;         //下一次写入的起始地址
+
 
 void Water_Spray();
 void Data_Save(u32 num);
-void Data_Get_Once(u8 Num);
+void Data_Save_End();
+void Data_Get_Once(u16 Num);
+void Data_End_Get_Once(u16 Num);
 void Data_Get_All();
 
 /*******************************************************************************
@@ -199,9 +200,46 @@ void Data_Save(u32 num)
 		p = &Save_Info;
 		
 		//将Save_Info信息保存到SRAM
-		FSMC_SRAM_WriteStruct(p,12*(temp-1));	 //结构体目前大小为12字节
+		FSMC_SRAM_WriteStruct(p,24*(temp-1));	 //开始和结束事件两结构体共占24字节，开始事件结构体占前12字节
 		
-		_24C08_I2C_HalfwordWrite(temp,0);		  //火花事件数加一后存入EEPROM的0地址
+		_24C08_I2C_HalfwordWrite(temp,0);		  //火花事件数加1后存入EEPROM的0地址
+	}
+}
+
+/*******************************************************************************
+* 函数名	: void Data_Save_End()
+* 函数描述  : 保留喷水结束时刻的时间
+* 输入参数  : 无
+* 输出结果  : 无
+* 返回值    : 无	
+*******************************************************************************/
+void Data_Save_End()
+{
+    u16 temp=0;	  
+	_DATA_SAVE_END *p;
+	temp = _24C08_I2C_HalfwordRead(34);		  //读取EEPROM 34地址当前记录的火花结束事件个数
+	temp++;
+
+	if(temp >= 1000)
+	{
+		;
+	}
+	else
+	{
+		//获取时间
+		Get_Cur_Time();
+	
+		//填充信息结构体
+		Save_End_Info.remain = 0;
+	    Save_End_Info.calendar = calendar;
+	    Save_End_Info.Event_Nr = temp;
+		
+		p = &Save_End_Info;
+		
+		//将Save_Info信息保存到SRAM
+		FSMC_SRAM_WriteStruct(p,24*(temp-1)+12);	 //开始和结束事件两结构体共占24字节，结束事件结构体占后12字节
+		
+		_24C08_I2C_HalfwordWrite(temp,34);		     //火花结束事件数加1后存入EEPROM的34地址
 	}
 }
 
@@ -212,7 +250,7 @@ void Data_Save(u32 num)
 * 输出结果  : 无
 * 返回值    : 无	
 *******************************************************************************/
-void Data_Get_Once(u8 Num)
+void Data_Get_Once(u16 Num)
 {
 	int offset;
 	_DATA_SAVE *p;
@@ -223,7 +261,7 @@ void Data_Get_Once(u8 Num)
 	}
 	else
 	{
-		offset = (Num-1)*sizeof(Save_Info);	//第Num次喷水数据存储地址的偏移值
+		offset =2*(Num-1)*sizeof(Save_Info);	//第Num次喷水数据存储地址的偏移值
 	
 		//读出数据保存在Get_Info结构体中	 
 		//ReadFlashStruct(offset,(u8 *)p,sizeof(Save_Info));
@@ -232,20 +270,28 @@ void Data_Get_Once(u8 Num)
 }
 
 /*******************************************************************************
-* 函数名	: void Data_Get_All()
-* 函数描述  : 从flash获取喷水时刻的火花个数和喷水时间
+* 函数名	: void Data_End_Get_Once(u16 Num)
+* 函数描述  : 从flash获取某一次的喷水时间和火花个数
 * 输入参数  : 保存数据Buffer
 * 输出结果  : 无
 * 返回值    : 无	
 *******************************************************************************/
-void Data_Get_All()
+void Data_End_Get_Once(u16 Num)
 {
+	int offset;
+	_DATA_SAVE_END *p;
+	p = &Get_End_Info;
+	if(Num == 0)
+	{
+		;
+	}
+	else
+	{
+		offset = 2*(Num-1)*sizeof(Save_Info)+12;	//第Num次喷水结束事件存储地址的偏移值
 	
-	//取出喷水总次数Spray_Num
-	ReadFlashNByte(SprayAddrOffset,total_spray_num,4);
-		
+	     FSMC_SRAM_ReadStruct(p,offset,12);			 //sizeof(Save_Info)大小为12
+	}
 }
-
 
 
 /*******************************************************************************
@@ -257,16 +303,34 @@ void Data_Get_All()
 *******************************************************************************/
 void Water_Spray()
 {
+     //开启喷水
+	 FSMC_CPLD_Write(CPLD_0x840_Status|=0x02,0x840);         //开启喷水继电器
+	 if(Spray_Cnt == 100) 
+	 {
+	 	Spray_Cnt = 0;
+	 }
+	 else
+	 {
+	 	Spray_Cnt++;
+	 }
+	 Spray_Event[Spray_Cnt] = 1;
+	 SprayTime_Cnt = 1;										//喷水期间内，如又发生火花事件，喷水时间顺延
+	 TIM3_Open_Cut = 0;
+	 TIM_Cmd(TIM3,ENABLE);
+	 
+
+	 //开启声光报警
 	 if(Alarm_reset_Flag == 1)			      //声光复位按钮按下时，不报警
 	 {
      	;	
 	 }
 	 else
 	 {
-	 	 FSMC_CPLD_Write(0x01,0x840);         //开启报警灯
-		 Spray_Flag  = 1;					  //开始喷水倒计时
-		 Spray_Cnt = 0;						  //一旦有最新火花事件，从新计数
+	 	 FSMC_CPLD_Write(CPLD_0x840_Status|=0x01,0x840);         //开启报警灯
+		 Alarm_Flag  = 1;					                     //开始声光报警倒计时
+		 AlarmTime_Cnt = 0;						                 //一旦有最新火花事件，从新计数
 	 }
+
 }
 
 

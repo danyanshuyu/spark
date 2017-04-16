@@ -20,6 +20,7 @@ void GPIO_Configuration(void);
 void USART_Configuration(void);
 void SPI_Configuration(void);
 void TIM2_Configuration(void);
+void TIM3_Configuration(void);
 void NVIC_Configuration(void);
 void EXTI_Configuration(void);
 extern void Delay_ms(u16);
@@ -61,7 +62,10 @@ int main(void)
 	USART_Configuration();
 
 	/* 设置 TIM2*/
-    TIM2_Configuration();	    
+    TIM2_Configuration();
+	
+	/* 设置 TIM3*/
+    TIM3_Configuration();	    
 
 	/*配置外部中断*/
 	EXTI_Configuration();
@@ -101,7 +105,7 @@ int main(void)
 
  	  //FSMC_CPLD测试
 	  //Delay_ms(0xFFFF);
-      //FSMC_CPLD_Write(0x01,0x840);	   //0x01开关量一灯亮 ，0x02开关量二灯亮，0x04开关量三灯亮
+      //FSMC_CPLD_Write(CPLD_0x840_Status|=0x03,0x840);	   //0x01开关量一灯亮 ，0x02开关量二灯亮，0x04开关量三灯亮
 								           //0x08开关量四灯亮 ，0x10开关量无灯亮，0x20开关量六灯亮
 	  //FSMC_CPLD_Write(0x00,0x840);	   //0x00开关量输出0 ，灯全灭
       //FSMC_CPLD_Write(0xFF,0x847);	   //测试小灯
@@ -136,17 +140,6 @@ int main(void)
 				    Poweron_TIM2_Enable_Cut = 0;
 					Poweron_TIM2_Enable_Flag = 1;
 				}
-			}
-
-			if(Spray_Flag== 1)				//喷水持续一段时间后关闭 单位：秒
-			{
-			   Spray_Cnt++;
-			   if(Spray_Cnt == Spray_TIME)
-			   {
-			        FSMC_CPLD_Write(0x00,0x840);      //到规定时间，关闭喷水口
-			   		Spray_Cnt = 0;
-					Spray_Flag = 0;
-			   }  
 			}
      	}								
 			
@@ -246,7 +239,7 @@ void RCC_Configuration(void)
 						    RCC_APB2Periph_AFIO ,ENABLE);	//使能GPIOA，GPIOB，
 	RCC_APB1PeriphClockCmd( RCC_APB1Periph_USART2,ENABLE);  //使能串口2
 	RCC_AHBPeriphClockCmd(RCC_AHBPeriph_FSMC, ENABLE);      //使能FSMC时钟
-    RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2|RCC_APB1Periph_TIM3, ENABLE);    //使能TIM2时钟
+    RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2|RCC_APB1Periph_TIM3, ENABLE);    //使能TIM2,TIM3时钟
 
 	RCC_APB1PeriphClockCmd(RCC_APB1Periph_PWR | RCC_APB1Periph_BKP, ENABLE);//使能PWR和BKP时钟
 }
@@ -377,6 +370,44 @@ void TIM2_Configuration(void)							 //按周期循环检测火花
 	TIM_Cmd(TIM2,DISABLE);//暂时关闭定时器2，在需要时开启
 } 
 
+/*******************************************************************************
+* 函数名  		: TIM3_Configuration
+* 函数描述    	: 设置定时器3
+* 输入参数      : 无
+* 输出结果      : 无
+* 返回值        : 无
+* 说明			：定时器的计数频率
+				TIMx_CLK = CK_INT/(TIM_Prescaler+1)
+				CK_INT:内部时钟频率，APB1的倍频器送出时钟72MHZ
+				TIM_Prescalar:设置的预分频系数，0-65535
+
+				设置TIM_Prescalar=36000
+				TIMx_CLK=72MHz/36000=2000HZ,则定时器的计数周期=1/2000HZ=0.5ms
+				如果定时1s，则需要计数2000次，自动重装载值
+*******************************************************************************/
+void TIM3_Configuration(void)							 //按周期中断延时功能
+{
+	/*定义定时器初始化结构体*/
+	TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure;
+
+	TIM_DeInit(TIM3);//将Timer设置为缺省值
+
+	TIM_InternalClockConfig(TIM3);//采用内部时钟给TIM3提供时钟源
+
+	/*初始化定时器*/
+	TIM_TimeBaseStructure.TIM_Period = 200;//设置计数溢出大小，每计200个产生一个更新事件	 //自动重装周期200*0.5ms=100ms
+	TIM_TimeBaseStructure.TIM_Prescaler = 36000-1;//7199;//预分频计数值为36000-1，这样计数器时钟为72MHz/36000=2000Hz
+	TIM_TimeBaseStructure.TIM_ClockDivision = 0;  //TIM_CKD_DIV1;设置时钟分割
+	TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;//向上计数
+	TIM_TimeBaseInit(TIM3,&TIM_TimeBaseStructure);
+	TIM_ClearFlag(TIM3,TIM_FLAG_Update);//清除标志
+	
+	TIM_ARRPreloadConfig(TIM3,DISABLE);//预装载寄存器的内容立即传送到影子寄存器
+
+	TIM_ITConfig(TIM3,TIM_IT_Update | TIM_IT_Trigger, ENABLE);//使能指定的TIM中断
+
+	TIM_Cmd(TIM3,DISABLE);//暂时关闭定时器3，在需要时开启
+}
 
 /*******************************************************************************
 * 函数名  		: NVIC_Configuration
@@ -404,7 +435,7 @@ void NVIC_Configuration(void)
 
 	//设置串口中断
 	NVIC_InitStructure.NVIC_IRQChannel = USART2_IRQChannel;// | EXTI9_5_IRQChannel;	//串口中断
-	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 2; //先占优先级4级
+	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 3; //先占优先级4级
 	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;	//从优先级4级
 	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;	 //IRQ通道使能
 	NVIC_Init(&NVIC_InitStructure);	
@@ -417,9 +448,16 @@ void NVIC_Configuration(void)
 	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;	 //IRQ通道使能
 	NVIC_Init(&NVIC_InitStructure);
 
+	//定时器TIM3中断
+	NVIC_InitStructure.NVIC_IRQChannel = TIM3_IRQChannel;//TIM3中断
+	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1; //先占优先级4级
+	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;	//从优先级4级
+	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;	 //IRQ通道使能
+	NVIC_Init(&NVIC_InitStructure);
+
 	//Enable the RTC Interrupt 
 	NVIC_InitStructure.NVIC_IRQChannel = RTC_IRQChannel;
-	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;
+	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 2;
 	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
 	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
 	NVIC_Init(&NVIC_InitStructure);	

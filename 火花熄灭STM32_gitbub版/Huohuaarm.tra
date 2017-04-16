@@ -5,27 +5,27 @@
 ### List of Objects: adding '"cortexm3_macro.o"'
 ### List of Objects: adding '"stm32f10x_vector.o"'
 ### List of Objects: adding '"main.o"'
+### List of Objects: adding '"functions.o"'
 ### List of Objects: adding '"stm32f10x_it.o"'
 ### List of Objects: adding '"fsmc_cpld_sram.o"'
-### List of Objects: adding '"spark_test.o"'
-### List of Objects: adding '"params.o"'
-### List of Objects: adding '"flash_operation.o"'
-### List of Objects: adding '"rtc_operation.o"'
-### List of Objects: adding '"screen.o"'
-### List of Objects: adding '"functions.o"'
 ### List of Objects: adding '"pcf8563_i2c.o"'
 ### List of Objects: adding '"24c08_i2c.o"'
-### List of Objects: adding '"language.o"'
+### List of Objects: adding '"flash_operation.o"'
+### List of Objects: adding '"rtc_operation.o"'
+### List of Objects: adding '"spark_test.o"'
 ### List of Objects: adding '"fault_test.o"'
 ### List of Objects: adding '"disable_test .o"'
+### List of Objects: adding '"params.o"'
+### List of Objects: adding '"language.o"'
+### List of Objects: adding '"screen.o"'
 ### ADS-LD Command completed:
---cpu Cortex-M3 ".\FWlib\STM32F10xR.LIB" "cortexm3_macro.o" "stm32f10x_vector.o" "main.o" "stm32f10x_it.o" "fsmc_cpld_sram.o" "spark_test.o" "params.o" "flash_operation.o" "rtc_operation.o" "screen.o" "functions.o" "pcf8563_i2c.o" "24c08_i2c.o" "language.o" "fault_test.o" "disable_test .o" --library_type=microlib --ro-base 0x08000000 --entry 0x08000000 --rw-base 0x20000000 --entry Reset_Handler --first __Vectors --strict --autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--cpu Cortex-M3 ".\FWlib\STM32F10xR.LIB" "cortexm3_macro.o" "stm32f10x_vector.o" "main.o" "functions.o" "stm32f10x_it.o" "fsmc_cpld_sram.o" "pcf8563_i2c.o" "24c08_i2c.o" "flash_operation.o" "rtc_operation.o" "spark_test.o" "fault_test.o" "disable_test .o" "params.o" "language.o" "screen.o" --library_type=microlib --ro-base 0x08000000 --entry 0x08000000 --rw-base 0x20000000 --entry Reset_Handler --first __Vectors --strict --autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
 --info sizes --info totals --info unused --info veneers 
  --list ".\Huohuaarm.map" -o "Huohuaarm.axf"### Preparing Environment (PrepEnvAds)
 ### ADS-LD Output File: 'Huohuaarm.axf'
 ### ADS-LD Command File: 'Huohuaarm.lnp'
 ### Checking for dirty Components...
-### Creating CmdFile 'Huohuaarm.lnp', Handle=0x00000308
+### Creating CmdFile 'Huohuaarm.lnp', Handle=0x0000031C
 ### Writing '.lnp' file
 ### ADS-LD Command file 'Huohuaarm.lnp' is ready.
 ### ADS-LD: About to start ADS-LD Thread.

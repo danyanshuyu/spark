@@ -583,6 +583,48 @@ void TIM2_IRQHandler(void)
 *******************************************************************************/
 void TIM3_IRQHandler(void)
 {
+    u8 i = 0;
+	if (TIM_GetITStatus(TIM3, TIM_IT_Update) != RESET)	//检测指定的中断是否发生
+	{
+		TIM_ClearITPendingBit(TIM3,TIM_IT_Update);      //清除中断处理位
+		for(;i <= 99;i++)
+		{
+			if(Spray_Event[i] != 0) 
+			{
+				Spray_Event[i]++;
+				if(Spray_Event[i] > 50)					//延迟时间 50*0.1s=5s
+				{
+					Spray_Event[i] = 0;
+					Data_Save_End();					//记录火花事件结束时间，
+					Screen_End_update();				//并显示
+				}
+			}
+		}
+
+
+		if(SprayTime_Cnt != 0) SprayTime_Cnt++;
+		if(SprayTime_Cnt > 50)
+		{
+			FSMC_CPLD_Write(CPLD_0x840_Status&=0xFD,0x840);      //到规定时间，关闭喷水
+	   		SprayTime_Cnt = 0;
+		}
+
+		
+		if(Alarm_Flag== 1)				                         //声光报警持续一段时间后关闭 单位：秒
+		{
+		   AlarmTime_Cnt++;
+		   if(AlarmTime_Cnt == 10*(Alarm_TIME))
+		   {
+		        FSMC_CPLD_Write(CPLD_0x840_Status&=0xFE,0x840);      //到规定时间，关闭声光报警
+		   		AlarmTime_Cnt = 0;
+				Alarm_Flag = 0;
+		   }  
+		}
+
+		TIM3_Open_Cut++;
+		if(TIM3_Open_Cut == 1000)								 //到极限时间，关闭定时器
+		TIM_Cmd(TIM3,DISABLE);
+	}	
 }
 
 /*******************************************************************************

@@ -1292,6 +1292,4 @@ void 	ReadTime(void)
 	SendChar(0x81);	
 	SendEndCmd();
 }
-
-
- 
+  

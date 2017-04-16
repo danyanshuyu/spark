@@ -35,6 +35,8 @@ void itoaT();
 void itoaF();
 void Alarm_Display_A();
 void Alarm_Display_B();
+void Alarm_End_Display_A();
+void Alarm_End_Display_B();
 void Fault_Display_A();
 void Disable_Display_A();
 
@@ -319,10 +321,10 @@ void TextProcess()
 					 DisText(280,230,0,9,Display61);
 					 _24C08_I2C_HalfwordWrite(10*Spark_DANGER_C_N,8);
 				     break;
-            case 504:Spray_TIME = sum ;
-					 itoaT(Spray_TIME,Display61);
+            case 504:Alarm_TIME = sum ;
+					 itoaT(Alarm_TIME,Display61);
 					 DisText(280,230,0,9,Display61);
-					 _24C08_I2C_HalfwordWrite(Spray_TIME,10);
+					 _24C08_I2C_HalfwordWrite(Alarm_TIME,10);
 				     break;
 			 default:break;
 		}																								 
@@ -357,8 +359,8 @@ void ButtonProcess()
 			if(ScreenID == 1 && ControlID == 37 && Status == 1)                //…˘π‚±®æØ∏¥Œª∞¥≈•£¨”…µØ∆±‰Œ™∞¥œ¬                
 			{
 				Alarm_reset_Flag = 1;
-				Spray_Flag = 0;												   //≈ÁÀÆµπº∆ ±∏¥Œª
-				FSMC_CPLD_Write(0x00,0x840);								   //∞¥œ¬∏¥Œª∞¥≈•∫Û£¨¡¢º¥∏¥Œª…˘π‚±®æØ…Ë±∏						   
+				Alarm_Flag = 0;												   //…˘π‚±®æØµπº∆ ±∏¥Œª
+				FSMC_CPLD_Write(CPLD_0x840_Status&=0xFE,0x840);				   //∞¥œ¬∏¥Œª∞¥≈•∫Û£¨¡¢º¥∏¥Œª…˘π‚±®æØ…Ë±∏						   
 			}
 
 
@@ -491,13 +493,13 @@ void ButtonProcess()
 	
 					if(Alarm_num>=Button_Dn)
 				    {
-				       Alarm_Display_A(Alarm_num);
-				       Alarm_Display_B(Alarm_num-1);
+				       Alarm_End_Display_A(Alarm_num);
+				       Alarm_End_Display_B(Alarm_num-1);
 					   GUI_Rectangle(465,115,600,175);
 				    }
 				    else if(Alarm_num==1)
 				    {
-					   Alarm_Display_A(1);
+					   Alarm_End_Display_A(1);
 					   GUI_Rectangle(465,115,600,175);
 				    }
 				    else if(Alarm_num==0)
@@ -561,12 +563,12 @@ void ButtonProcess()
 	
 					    if(Alarm_num>=Button_Dn)
 			            {
-			                Alarm_Display_A(Alarm_num-Button_Dn+2);			   //Alarm_num-(Button_Dn-2)
-			     		    Alarm_Display_B(Alarm_num-Button_Dn+1);			   //Alarm_num-(Button_Dn-2)-1
+			                Alarm_End_Display_A(Alarm_num-Button_Dn+2);			   //Alarm_num-(Button_Dn-2)
+			     		    Alarm_End_Display_B(Alarm_num-Button_Dn+1);			   //Alarm_num-(Button_Dn-2)-1
 				        }			        
 						else if(Alarm_num<Button_Dn)
 			     	    {
-				       	    Alarm_Display_A(Alarm_num-Button_Dn+2);			   //Alarm_num-(Button_Dn-2)
+				       	    Alarm_End_Display_A(Alarm_num-Button_Dn+2);			   //Alarm_num-(Button_Dn-2)
 			     	    }
 						if(Alarm_num != 0)
 						{
@@ -599,8 +601,8 @@ void ButtonProcess()
 							DisText(15,85,0,3,Content[Lang_Flag][1]);
 							DisText(340,85,0,3,Content[Lang_Flag][2]);
 							DisText(470,85,0,3,Content[Lang_Flag][3]);
-							Alarm_Display_A(2);			 
-				     		Alarm_Display_B(1);
+							Alarm_End_Display_A(2);			 
+				     		Alarm_End_Display_B(1);
 							GUI_Rectangle(465,235,600,295);
 							DisplyLayer(Layer);
 						    Layer=3-Layer;
@@ -629,12 +631,12 @@ void ButtonProcess()
 		
 						    if(Alarm_num>=Button_Dn)
 				            {
-				                Alarm_Display_A(Alarm_num-Button_Dn+2);		   //Alarm_num-(Button_Dn-2)
-				     		    Alarm_Display_B(Alarm_num-Button_Dn+1);		   //Alarm_num-(Button_Dn-2)-1
+				                Alarm_End_Display_A(Alarm_num-Button_Dn+2);		   //Alarm_num-(Button_Dn-2)
+				     		    Alarm_End_Display_B(Alarm_num-Button_Dn+1);		   //Alarm_num-(Button_Dn-2)-1
 					        }			        
 							else if(Alarm_num<Button_Dn)
 				     	    {
-					       	    Alarm_Display_A(Alarm_num-Button_Dn+2);		   //Alarm_num-(Button_Dn-2)
+					       	    Alarm_End_Display_A(Alarm_num-Button_Dn+2);		   //Alarm_num-(Button_Dn-2)
 				     	    }
 							if (UD_FlagStatus%2 == 0)
 							{
@@ -671,8 +673,8 @@ void ButtonProcess()
 					DisText(15,85,0,3,Content[Lang_Flag][1]);
 					DisText(340,85,0,3,Content[Lang_Flag][2]);
 					DisText(470,85,0,3,Content[Lang_Flag][3]);
-					Alarm_Display_A(Alarm_num-Button_Dn+2);				       //Alarm_num-(Button_Dn-2)
-			        Alarm_Display_B(Alarm_num-Button_Dn+1);				       //Alarm_num-(Button_Dn-2)-1
+					Alarm_End_Display_A(Alarm_num-Button_Dn+2);				       //Alarm_num-(Button_Dn-2)
+			        Alarm_End_Display_B(Alarm_num-Button_Dn+1);				       //Alarm_num-(Button_Dn-2)-1
 					if (UD_FlagStatus%2 != 0)
 					{
 						GUI_Rectangle(465,235,600,295);                        //‘⁄B¥¶œ‘ æ—°‘ÒøÚ
@@ -1137,13 +1139,13 @@ void ButtonProcess()
 	
 					if(Alarm_num>=Button_Dn)
 				    {
-				       Alarm_Display_A(1);
-				       Alarm_Display_B(2);
+				       Alarm_End_Display_A(1);
+				       Alarm_End_Display_B(2);
 					   GUI_Rectangle(465,115,600,175);
 				    }
 				    else if(Alarm_num==1)
 				    {
-					   Alarm_Display_A(1);
+					   Alarm_End_Display_A(1);
 					   GUI_Rectangle(465,115,600,175);
 				    }
 				    else if(Alarm_num==0)
@@ -1172,8 +1174,8 @@ void ButtonProcess()
 							DisText(15,85,0,3,Content[Lang_Flag][1]);
 							DisText(340,85,0,3,Content[Lang_Flag][2]);
 							DisText(470,85,0,3,Content[Lang_Flag][3]);
-							Alarm_Display_A(Button_Dn-1);			 
-				     		Alarm_Display_B(Button_Dn);
+							Alarm_End_Display_A(Button_Dn-1);			 
+				     		Alarm_End_Display_B(Button_Dn);
 							GUI_Rectangle(465,235,600,295);
 							DisplyLayer(Layer);
 						    Layer=3-Layer;
@@ -1202,12 +1204,12 @@ void ButtonProcess()
 		
 						    if(Alarm_num>=Button_Dn)
 				            {
-				                Alarm_Display_A(Button_Dn-1);			 
-				     		    Alarm_Display_B(Button_Dn);			     
+				                Alarm_End_Display_A(Button_Dn-1);			 
+				     		    Alarm_End_Display_B(Button_Dn);			     
 					        }			        
 							else if(Alarm_num<Button_Dn)
 				     	    {
-					       	    Alarm_Display_A(Button_Dn-1);			
+					       	    Alarm_End_Display_A(Button_Dn-1);			
 				     	    }
 	
 							if (UD_FlagStatus%2 == 0)
@@ -1245,8 +1247,8 @@ void ButtonProcess()
 					DisText(15,85,0,3,Content[Lang_Flag][1]);
 					DisText(340,85,0,3,Content[Lang_Flag][2]);
 					DisText(470,85,0,3,Content[Lang_Flag][3]);
-					Alarm_Display_A(Button_Dn-1);				
-			        Alarm_Display_B(Button_Dn);			     	
+					Alarm_End_Display_A(Button_Dn-1);				
+			        Alarm_End_Display_B(Button_Dn);			     	
 					if (UD_FlagStatus%2 != 0)
 					{
 						GUI_Rectangle(465,235,600,295);                        //‘⁄B¥¶œ‘ æ—°‘ÒøÚ
@@ -1309,6 +1311,8 @@ void ButtonProcess()
 				{															   //751 …æ≥˝æØ±®¿˙ ∑–≈œ¢--»∑»œ…æ≥˝
 				    _24C08_I2C_HalfwordWrite(0,0);
 					Alarm_num = 0;
+					_24C08_I2C_HalfwordWrite(0,34);
+					Alarm_End_num = 0;
 					Confirm_FlagStatus = 1;									   //»∑±£»∑»œº¸÷ªƒ‹∞¥“ª¥Œ
 											 																				 
 					WriteLayer(Layer);
@@ -1317,14 +1321,13 @@ void ButtonProcess()
 					SetFcolor(0xFFFF);
 					GUI_RectangleFill(131,1,499,72);
 					GUI_RectangleFill(0,74,619,380);
-					GUI_RectangleFill(60,390,100,415);
 					SetFcolor(0);
 					DisArea_Image(143,23,21,0);		
 					DisText(271,23,0,7,Content[Lang_Flag][23]);
 					DisText(5,80,0,2,Content[Lang_Flag][65]);					
 					DisText(150,170,0,7,Content[Lang_Flag][70]);
 					itoaT(Alarm_num,JINGBAO_CUT);
-	                DisText(60,390,0,2,JINGBAO_CUT);
+	                SetTextView(1,38,JINGBAO_CUT);
 					DisplyLayer(Layer);
 					CopyLayer(Layer,3-Layer);
 					Layer=3-Layer;
@@ -1833,7 +1836,8 @@ void ScreenInit()                                                              /
 	  Button_Dn = 2;				   //æØ±®ΩÁ√Ê ±£¨…œœ¬º¸∞¥“ª¥Œ∏¸–¬œ‘ æ¡ÌÕ‚2Ãı–≈œ¢
 	  Screen_update_Flag = 0;		   //◊‘ºÏ≥Ã–Ú”–ø…ƒ‹ π∆¡ƒª∏¸–¬±Í÷æŒª÷√1£¨¥À¥¶÷ÿ–¬÷√0
 
-	  _24C08_I2C_HalfwordWrite(0,0);			                               //ªª® ¬º˛º∆ ˝«Â0                       
+	  _24C08_I2C_HalfwordWrite(0,0);			                               //ªª® ¬º˛º∆ ˝«Â0
+	  _24C08_I2C_HalfwordWrite(0,34);			                               //ªª®Ω· ¯ ¬º˛º∆ ˝«Â0                       
 	  _24C08_I2C_PageWrite(I2C_Data,16,4);		                               //≥ı º√‹¬Î∂®Œ™1234
 	  _24C08_I2C_ByteWrite(4,32); 				                               //≥ı º√‹¬Î≥§∂»∂®Œ™4Œª
 	  _24C08_I2C_ByteWrite(1,14);											   //∑‰√˘∆˜ø™
@@ -1841,10 +1845,11 @@ void ScreenInit()                                                              /
 	  Spark_DANGER_B = _24C08_I2C_HalfwordRead(4);
 	  Spark_DANGER_B_M = _24C08_I2C_HalfwordRead(6);
 	  Spark_DANGER_C_N = _24C08_I2C_HalfwordRead(8);
-	  Spray_TIME = _24C08_I2C_HalfwordRead(10);
+	  Alarm_TIME = _24C08_I2C_HalfwordRead(10);
 	  Lang_Flag = _24C08_I2C_HalfwordRead(12);
 	  Buzzer_Flag =	_24C08_I2C_HalfwordRead(14);							   
 	  Alarm_num = _24C08_I2C_HalfwordRead(0);								   //∂¡»°µ±«∞ªª® ¬º˛º«¬º∏ˆ ˝
+	  Alarm_End_num = _24C08_I2C_HalfwordRead(34);							   //∂¡»°µ±«∞ªª®Ω· ¯ ¬º˛º«¬º∏ˆ ˝
 
 	  WriteLayer(1);					                                       //–¥Õº≤„“ª						
 	   
@@ -1895,7 +1900,7 @@ void ScreenInit()                                                              /
 	  TIM_Cmd(TIM2,ENABLE);													   //∆Ù∂Ø√ø0.5s“ª¥Œµƒ∂® ±÷–∂œ
 }
 
-void Screen_update()                                                           //∆¡ƒª ˝æ›∏¸–¬œ‘ æ≥Ã–Ú
+void Screen_update()                                                           //∆¡ƒª ˝æ›∏¸–¬œ‘ æ≥Ã–Ú-- ¬º˛ø™ º ±º‰
 {
 	  //∏¥Œª∏˜œ‘ æœ‡πÿ±Í÷æŒª
       Menu_FlagStatus = 0;          //≤Àµ•º¸»°÷µ◊¥Ã¨£¨»°÷µ0/1/2/3£¨∂‘”¶4∏ˆ≤Àµ•
@@ -1904,8 +1909,8 @@ void Screen_update()                                                           /
 	  UD_FlagStatus = 0;            //…œœ¬º¸º∆ ˝◊¥Ã¨£¨∞¥“ª¥Œœ¬º¸º”1£¨∞¥“ª¥Œ…œº¸ºı1
 	  Button_Dn = 2;			    //æØ±®ΩÁ√Ê ±£¨…œœ¬º¸∞¥“ª¥Œ∏¸–¬œ‘ æ¡ÌÕ‚2Ãı–≈œ¢
 	  
-	  Alarm_num = _24C08_I2C_HalfwordRead(0);								   //◊Ó–¬ªª® ¬º˛ ˝∏¸–¬œ‘ æ
-
+	  Alarm_num = _24C08_I2C_HalfwordRead(0);								   //◊Ó–¬ªª® ¬º˛ ˝
+	  Alarm_End_num = _24C08_I2C_HalfwordRead(34);							   //◊Ó–¬ªª®Ω· ¯ ¬º˛ ˝
 	  WriteLayer(Layer);					                                   //–¥Õº≤„						
 
 	  SetFcolor(0xFFFF);
@@ -1940,30 +1945,107 @@ void Screen_update()                                                           /
 		  DisText(15,85,0,3,Content[Lang_Flag][1]);
 		  DisText(340,85,0,3,Content[Lang_Flag][2]);
 		  DisText(470,85,0,3,Content[Lang_Flag][3]);
-	
-		  if(Alarm_num>=Button_Dn)
+		  if((Alarm_num-Alarm_End_num)==1)
 		  {
-		     Alarm_Display_A(Alarm_num);
-			 Alarm_Display_B(Alarm_num-1);
-			 GUI_Rectangle(465,115,600,175);
+			  if(Alarm_num>=2)
+			  {
+			     Alarm_Display_A(Alarm_num);
+				 Alarm_End_Display_B(Alarm_num-1);
+			  }
+			  else if(Alarm_num==1)
+			  {
+				 Alarm_Display_A(1);
+			  }
 		  }
-		  else if(Alarm_num==1)
+		  if((Alarm_num-Alarm_End_num)>=2)
 		  {
-			 Alarm_Display_A(1);
-			 GUI_Rectangle(465,115,600,175);
+			     Alarm_Display_A(Alarm_num);
+				 Alarm_Display_B(Alarm_num-1);				 
 		  }
-		  else if(Alarm_num==0)
-		  {
-		      ;
-		  }
+		  GUI_Rectangle(465,115,600,175);
 	  }								 
 	  DisplyLayer(Layer);
 	  CopyLayer(Layer,3-Layer);					   
 	  Layer=3-Layer;					   
 }
-		
 
-void Fault_Display_A(u8 num)					                               //π ’œœ‘ æA«¯”Ú		num-µ⁄º∏∏ˆπ ’œ
+void Screen_End_update()                                                           //∆¡ƒª ˝æ›∏¸–¬œ‘ æ≥Ã–Ú-- ¬º˛Ω· ¯ ±º‰
+{
+	  //∏¥Œª∏˜œ‘ æœ‡πÿ±Í÷æŒª
+      Menu_FlagStatus = 0;          //≤Àµ•º¸»°÷µ◊¥Ã¨£¨»°÷µ0/1/2/3£¨∂‘”¶4∏ˆ≤Àµ•
+	  System_FlagStatus = -1;		//œµÕ≥“ªº∂≤Àµ•µƒ»°÷µ£¨0~7£¨-1Œ™≥ı ºªØ÷µ
+	  LR_FlagStatus = 0;            //◊Û”“º¸º∆ ˝◊¥Ã¨£¨∞¥“ª¥Œ”“º¸º”1£¨∞¥“ª¥Œ◊Ûº¸ºı1
+	  UD_FlagStatus = 0;            //…œœ¬º¸º∆ ˝◊¥Ã¨£¨∞¥“ª¥Œœ¬º¸º”1£¨∞¥“ª¥Œ…œº¸ºı1
+	  Button_Dn = 2;			    //æØ±®ΩÁ√Ê ±£¨…œœ¬º¸∞¥“ª¥Œ∏¸–¬œ‘ æ¡ÌÕ‚2Ãı–≈œ¢
+	  
+	  Alarm_num = _24C08_I2C_HalfwordRead(0);								   //◊Ó–¬ªª® ¬º˛ ˝
+	  Alarm_End_num = _24C08_I2C_HalfwordRead(34);							   //◊Ó–¬ªª®Ω· ¯ ¬º˛ ˝
+	  WriteLayer(Layer);					                                   //–¥Õº≤„						
+
+	  SetFcolor(0xFFFF);
+	  GUI_RectangleFill(131,1,499,72);
+	  
+	  if(Alarm_num != 0)
+	  {
+	  SetFcolor(0xF800);					                                   //…Ë÷√«∞æ∞Œ™∫Ï…´ 
+	  GUI_CircleFill(666,80,5);
+	  }										                                   //±®æØµ∆¡¡
+	  else
+	  {
+	   SetFcolor(0x9FF9);					                                   //…Ë÷√«∞æ∞Œ™ª“…´
+	   GUI_CircleFill(666,80,5);			                                   //±®æØµ∆√
+	  }
+
+	  itoaT(Alarm_num,JINGBAO_CUT);											   
+	  SetTextView(1,38,JINGBAO_CUT);										   //ªª® ¬º˛◊‹ ˝œ‘ æ
+
+	  DisArea_Image(135,16,22,0);
+	  SetFcolor(0);		
+	  DisText(271,23,0,7,Content[Lang_Flag][0]);				   
+	  
+	  if(Alarm_num >= 1000)
+	  {
+	      DisText(130,190,0,7,Content[Lang_Flag][75]);
+		  DisText(135,250,0,7,Content[Lang_Flag][76]);
+	  }		
+	  else
+	  {
+		  if((Alarm_num-Alarm_End_num)==0)
+		  {
+		      SetFcolor(0xFFFF);
+		  	  GUI_RectangleFill(0,74,619,380);
+			  if(Alarm_num>=2)
+			  {
+			     Alarm_End_Display_A(Alarm_num);
+				 Alarm_End_Display_B(Alarm_num-1);
+			  }
+			  else if(Alarm_num==1)
+			  {
+				 Alarm_End_Display_A(1);
+			  }
+		  }
+		  if((Alarm_num-Alarm_End_num)==1)
+		  {
+		      SetFcolor(0xFFFF);
+		  	  GUI_RectangleFill(0,74,619,380);
+		  	  Alarm_Display_A(Alarm_num);
+			  Alarm_End_Display_B(Alarm_num-1);
+		  }
+		  if((Alarm_num-Alarm_End_num)>=2)
+		  {
+              ;
+		  }
+		  DisText(15,85,0,3,Content[Lang_Flag][1]);
+		  DisText(340,85,0,3,Content[Lang_Flag][2]);
+		  DisText(470,85,0,3,Content[Lang_Flag][3]);
+		  GUI_Rectangle(465,115,600,175);
+	  }								 
+	  DisplyLayer(Layer);
+	  CopyLayer(Layer,3-Layer);					   
+	  Layer=3-Layer;					   
+}		
+
+void Fault_Display_A(u16 num)					                               //π ’œœ‘ æA«¯”Ú		num-µ⁄º∏∏ˆπ ’œ
 {
         if(num <= 0)
 		{
@@ -2004,7 +2086,7 @@ void Fault_Display_A(u8 num)					                               //π ’œœ‘ æA«¯”Ú	
 		}
 }
 
-void Disable_Display_A(u8 num)					                               //πÿ±’œ‘ æA«¯”Ú		num-µ⁄º∏∏ˆπÿ±’ ¬º˛
+void Disable_Display_A(u16 num)					                               //πÿ±’œ‘ æA«¯”Ú		num-µ⁄º∏∏ˆπÿ±’ ¬º˛
 {
         if(num <= 0)
 		{
@@ -2045,7 +2127,7 @@ void Disable_Display_A(u8 num)					                               //πÿ±’œ‘ æA«¯”
 		}
 }
 
-void Alarm_Display_A(u8 num)					                               //æØ±®œ‘ æA«¯”Ú		num-µ⁄º∏¥Œ±®æØ
+void Alarm_Display_A(u16 num)					                               //æØ±®œ‘ æA«¯”Ú		num-µ⁄º∏¥Œ±®æØ
 {
         if(num <= 0)
 		{
@@ -2070,10 +2152,14 @@ void Alarm_Display_A(u8 num)					                               //æØ±®œ‘ æA«¯”Ú	
 			DisText(145,115,0,9,"DG");
 			DisText(235,115,0,9,"001");
 
-			itoaD(Get_Info.calendar.hour,HOUR1);
-			itoaD(Get_Info.calendar.min,MIN1);
-			itoaD(Get_Info.calendar.second+5,SECOND1);
+			itoaD(0,HOUR1);
+			itoaD(0,MIN1);
+			itoaD(0,SECOND1);
+			itoaD(0,YEAR1);
+			itoaD(0,MONTH1);
+			itoaD(0,DATE1);
 			strcat(strcat(strcat(strcat(HOUR1,":"),MIN1),":"),SECOND1);
+			strcat(strcat(strcat(strcat(YEAR1,"."),MONTH1),"."),DATE1);
 
 			itoaF(Get_Info.Event_Nr,EVENT_NR);
 			DisText(340,122,0,2,HOUR1);
@@ -2086,10 +2172,9 @@ void Alarm_Display_A(u8 num)					                               //æØ±®œ‘ æA«¯”Ú	
 			DisText(15,205,0,2,SPARKS);
 			memset(SPARKS,'\0', sizeof(SPARKS));			                   //«Â¡„SPARKS◊÷∑˚¥Æ
 		}
-}														 
+}
 
-
-void Alarm_Display_B(u8 num)					                               //æØ±®œ‘ æB«¯”Ú		num-µ⁄º∏¥Œ±®æØ
+void Alarm_Display_B(u16 num)					                               //æØ±®œ‘ æB«¯”Ú		num-µ⁄º∏¥Œ±®æØ
 {
         if(num <= 0)
 		{
@@ -2114,10 +2199,14 @@ void Alarm_Display_B(u8 num)					                               //æØ±®œ‘ æB«¯”Ú	
 			DisText(145,235,0,9,"DG");
 			DisText(235,235,0,9,"001");
 
-			itoaD(Get_Info.calendar.hour,HOUR2);
-			itoaD(Get_Info.calendar.min,MIN2);
-			itoaD(Get_Info.calendar.second+5,SECOND2);
+			itoaD(0,HOUR2);
+			itoaD(0,MIN2);
+			itoaD(0,SECOND2);
+			itoaD(0,YEAR2);
+			itoaD(0,MONTH2);
+			itoaD(0,DATE2);
 			strcat(strcat(strcat(strcat(HOUR2,":"),MIN2),":"),SECOND2);
+			strcat(strcat(strcat(strcat(YEAR2,"."),MONTH2),"."),DATE2);
 
 			itoaF(Get_Info.Event_Nr,EVENT_NR);
 			DisText(340,242,0,2,HOUR2);
@@ -2131,6 +2220,104 @@ void Alarm_Display_B(u8 num)					                               //æØ±®œ‘ æB«¯”Ú	
 		}
 
 }	
+
+
+void Alarm_End_Display_A(u16 num)					                               //æØ±®Ω· ¯œ‘ æA«¯”Ú		num-µ⁄º∏¥Œ±®æØ
+{
+        if(num <= 0)
+		{
+			;
+		}
+		else
+		{
+	        Data_Get_Once(num);
+		    itoaD(Get_Info.calendar.year,YEAR1);
+			itoaD(Get_Info.calendar.month,MONTH1);
+			itoaD(Get_Info.calendar.date,DATE1);
+			itoaD(Get_Info.calendar.hour,HOUR1);
+			itoaD(Get_Info.calendar.min,MIN1);
+			itoaD(Get_Info.calendar.second,SECOND1);
+			strcat(strcat(strcat(strcat(HOUR1,":"),MIN1),":"),SECOND1);
+			strcat(strcat(strcat(strcat(YEAR1,"."),MONTH1),"."),DATE1);		   //∞—∫Û’ﬂ¡¨Ω”µΩ«∞’ﬂµƒ¥ÆŒ≤
+		    SetFcolor(0xFFFF);					                               //∞◊
+			GUI_RectangleFill(1,120,610,350);								   //GUI_RectangleFill(1,220,499,320);
+			SetFcolor(0);				                                       //∫⁄				
+			DisText(15,122,0,2,HOUR1);
+			DisText(15,147,0,2,YEAR1);
+			DisText(145,115,0,9,"DG");
+			DisText(235,115,0,9,"001");
+
+			Data_End_Get_Once(num);
+			itoaD(Get_End_Info.calendar.year,YEAR1);
+			itoaD(Get_End_Info.calendar.month,MONTH1);
+			itoaD(Get_End_Info.calendar.date,DATE1);
+			itoaD(Get_End_Info.calendar.hour,HOUR1);
+			itoaD(Get_End_Info.calendar.min,MIN1);
+			itoaD(Get_End_Info.calendar.second,SECOND1);
+			strcat(strcat(strcat(strcat(HOUR1,":"),MIN1),":"),SECOND1);
+			strcat(strcat(strcat(strcat(YEAR1,"."),MONTH1),"."),DATE1);		   //∞—∫Û’ﬂ¡¨Ω”µΩ«∞’ﬂµƒ¥ÆŒ≤
+
+			itoaF(Get_End_Info.Event_Nr,EVENT_NR);
+			DisText(340,122,0,2,HOUR1);
+			DisText(340,147,0,2,YEAR1);
+
+			DisText(470,115,0,9,EVENT_NR);
+			DisText(15,175,0,3,Content[Lang_Flag][5]);
+			itoaT(Get_Info.spark_num,SPARK_NUM);
+			strcat(strcat(strcat(SPARKS,Content[Lang_Flag][82]),SPARK_NUM),Content[Lang_Flag][112]);
+			DisText(15,205,0,2,SPARKS);
+			memset(SPARKS,'\0', sizeof(SPARKS));			                   //«Â¡„SPARKS◊÷∑˚¥Æ
+		}
+}														 
+
+
+void Alarm_End_Display_B(u16 num)					                               //æØ±®Ω· ¯œ‘ æB«¯”Ú		num-µ⁄º∏¥Œ±®æØ
+{
+        if(num <= 0)
+		{
+			;
+		}
+		else
+		{
+	        Data_Get_Once(num);
+		    itoaD(Get_Info.calendar.year,YEAR2);
+			itoaD(Get_Info.calendar.month,MONTH2);
+			itoaD(Get_Info.calendar.date,DATE2);
+			itoaD(Get_Info.calendar.hour,HOUR2);
+			itoaD(Get_Info.calendar.min,MIN2);
+			itoaD(Get_Info.calendar.second,SECOND2);
+			strcat(strcat(strcat(strcat(HOUR2,":"),MIN2),":"),SECOND2);
+			strcat(strcat(strcat(strcat(YEAR2,"."),MONTH2),"."),DATE2);		   //∞—∫Û’ﬂ¡¨Ω”µΩ«∞’ﬂµƒ¥ÆŒ≤
+		    SetFcolor(0xFFFF);				                                   //∞◊
+			GUI_RectangleFill(1,241,610,330);
+			SetFcolor(0);				                                       //∫⁄								   			
+			DisText(15,242,0,2,HOUR2);
+			DisText(15,267,0,2,YEAR2);
+			DisText(145,235,0,9,"DG");
+			DisText(235,235,0,9,"001");
+
+			Data_End_Get_Once(num);
+		    itoaD(Get_End_Info.calendar.year,YEAR2);
+			itoaD(Get_End_Info.calendar.month,MONTH2);
+			itoaD(Get_End_Info.calendar.date,DATE2);
+			itoaD(Get_End_Info.calendar.hour,HOUR2);
+			itoaD(Get_End_Info.calendar.min,MIN2);
+			itoaD(Get_End_Info.calendar.second,SECOND2);
+			strcat(strcat(strcat(strcat(HOUR2,":"),MIN2),":"),SECOND2);
+			strcat(strcat(strcat(strcat(YEAR2,"."),MONTH2),"."),DATE2);		   //∞—∫Û’ﬂ¡¨Ω”µΩ«∞’ﬂµƒ¥ÆŒ≤
+
+			itoaF(Get_End_Info.Event_Nr,EVENT_NR);
+			DisText(340,242,0,2,HOUR2);
+			DisText(340,267,0,2,YEAR2);
+			DisText(470,235,0,9,EVENT_NR);
+			DisText(15,290,0,3,Content[Lang_Flag][5]);
+		    itoaT(Get_Info.spark_num,SPARK_NUM);
+			strcat(strcat(strcat(SPARKS,Content[Lang_Flag][82]),SPARK_NUM),Content[Lang_Flag][112]);
+			DisText(15,320,0,2,SPARKS);
+			memset(SPARKS,'\0', sizeof(SPARKS));		                       //«Â¡„SPARKS◊÷∑˚¥Æ
+		}
+
+}
 
 
 void itoa(int num,char str[] )				                                   //Ω´’˚–Õ◊™ªª≥…◊÷∑˚¥Æ¿‡–Õ
