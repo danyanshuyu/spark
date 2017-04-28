@@ -7,6 +7,9 @@
 #define FLASH_PAGE_SIZE    ((u16)0x400)   //USE_STM3210B
 
 //Spark_test操作参数
+#define IO_ALARM_EN    0x01
+#define IO_SPRAY_EN    0x02
+
 extern int Single_num;                  //一个时间单元内火花个数
 extern u8  Single_temp1;                //一个时间单元开始处火花累加器中的个数
 extern u8  Single_temp2;                //一个时间单元终了处火花累加器中的个数
@@ -15,14 +18,6 @@ extern u16 Spark_DANGER_A;              //单次检测到火花数的临界值
 extern u16 Spark_DANGER_B;              //一段时间内检测到火花数累加的临界值
 extern u16 Spark_DANGER_B_M;            //一段时间内检测到火花数累加的极限时间   //即Spark_DANGER_M倍的单次检测周期
 extern u16 Spark_DANGER_C_N;            //一段时间内持续检测到火花的极限时间     //即Spark_DANGER_N倍的单次检测周期
-extern u8  Alarm_Flag;				    //声光报警控制
-extern u16 Alarm_TIME;                  //声光报警时间
-extern u16 AlarmTime_Cnt;               //声光报警时间计数
-extern u16 SprayTime_Cnt;               //喷水时间计数
-extern u8  Spray_Cnt;                   //喷水熄灭事件中断计数
-extern u16 Spray_Event[100];            //喷水熄灭事件缓存
-extern u8  TIM3_Open_Cut;               //喷水事件中断延迟定时计数器关闭计数
-
 
 
 extern void Spark_test(void);          //火花检测 
@@ -30,8 +25,8 @@ extern void Spark_test(void);          //火花检测
 
 //Function操作参数
 extern u8 Screen_update_Flag;
-extern u8 Poweron_TIM2_Enable_Flag;
-extern u8 Poweron_TIM2_Enable_Cut;
+extern u8 Spark_test_Enable_Flag;
+extern u8 Spark_test_Enable_Cut;
 extern u16  Alarm_num;				   //警报事件数
 extern u16  Alarm_End_num;			   //警报结束事件数
 extern u8 Buzzer_Flag;				   //触摸屏蜂鸣器控制
@@ -40,6 +35,14 @@ extern u8 Alarm_reset_Flag;		       //声光报警设备控制
 extern u8 Test_mode_Flag;			   //元件测试模式
 extern u8 Test_result_Flag;			   //测试结果代码
 extern u16  Fault_num;				   //故障事件数
+extern u8  Alarm_Flag;				    //声光报警控制
+extern u16 Alarm_TIME;                  //声光报警时间
+extern u16 Spray_TIME;                  //喷水时间
+extern u16 AlarmTime_Cnt;               //声光报警时间计数
+extern u16 SprayTime_Cnt;               //喷水时间计数
+extern u8  Spray_Cnt;                   //喷水熄灭事件中断计数
+extern u16 Spray_Event[100];            //喷水熄灭事件缓存
+extern u8  TIM3_Open_Cut;               //喷水事件中断延迟定时计数器关闭计数
 
 
 //PCF8563_RTC 操作参数

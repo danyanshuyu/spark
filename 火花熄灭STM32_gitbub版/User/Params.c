@@ -4,8 +4,8 @@
 #include "extern_variables.h"
 
 u8 Screen_update_Flag = 0;
-u8 Poweron_TIM2_Enable_Flag = 0;
-u8 Poweron_TIM2_Enable_Cut = 0;
+u8 Spark_test_Enable_Flag = 1;
+u8 Spark_test_Enable_Cut = 0;
 u16  Alarm_num = 0;				   //储存在EEPROM中的警报事件总数,初始化为0，地址0
 u16  Alarm_End_num = 0;			   //储存在EEPROM中的警报结束事件总数,初始化为0，地址34
 u16  Fault_num = 0;				   //储存在EEPROM中的故障事件总数,初始化为0，地址48
@@ -20,6 +20,7 @@ u16 Spark_DANGER_B = 15;           //一段时间内检测到火花数累加的临界值
 u16 Spark_DANGER_B_M = 10;         //一段时间内检测到火花数累加的极限时间   //即Spark_DANGER_M倍的单次检测周期
 u16 Spark_DANGER_C_N = 20;         //一段时间内持续检测到火花的极限时间     //即Spark_DANGER_N倍的单次检测周期
 u16 Alarm_TIME = 5;				   //声光报警时间
+u16 Spray_TIME = 5;				   //喷水时间
 u16 AlarmTime_Cnt = 0;
 u8 Alarm_Flag  = 0;
 u16 SprayTime_Cnt = 0;

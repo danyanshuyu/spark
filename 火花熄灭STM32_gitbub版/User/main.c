@@ -81,6 +81,7 @@ int main(void)
 
 	/*配置RTC*/
     RTC_Configuration();       //配置RTC
+
 				
 	  Delay_ms(0xFFFF);
 	  DisScreen(1);
@@ -97,11 +98,11 @@ int main(void)
 //	  _24C08_I2C_ByteWrite(4,32); 				  //初始密码长度定为4位
 			 	        
 	  //FSMC_SRAM测试
-/*    *(vu16*) (0x68000000) = 0x1111;
+/*      *(vu16*) (0x68000000) = 0x1111;
       *(vu16*) (0x68000002) = 0x1234;
       *(vu16*) (0x68000004) = 0x1234;
       Buffer1	= *(vu16*) (0x68000000);
-      Buffer2	= *(vu16*) (0x68000002);	   */
+      Buffer2	= *(vu16*) (0x68000002);	 */  
 
  	  //FSMC_CPLD测试
 	  //Delay_ms(0xFFFF);
@@ -131,14 +132,14 @@ int main(void)
 			TimeDisplay = 0;
 
 
-			if(Poweron_TIM2_Enable_Flag == 0)				             //开机上电时，火花检测程序延迟启动
+			if(Spark_test_Enable_Flag == 0)				                 //开机上电时，火花检测程序延迟启动
 			{												             //开关测试信号，火花检测程序延迟启动
-				Poweron_TIM2_Enable_Cut++;
-				if(Poweron_TIM2_Enable_Cut == 3)
+				Spark_test_Enable_Cut++;
+				if(Spark_test_Enable_Cut == 3)
 				{
-	  				Test_mode_Flag = 0;				                                       
-				    Poweron_TIM2_Enable_Cut = 0;
-					Poweron_TIM2_Enable_Flag = 1;
+	  				Test_mode_Flag = 0;				                     //火花检测模式                  
+				    Spark_test_Enable_Cut = 0;
+					Spark_test_Enable_Flag = 1;
 				}
 			}
      	}								

@@ -275,12 +275,12 @@ void TextProcess()
 		}
 		    
 	}
-	if(ScreenID == 1 && ControlID == 32 && System_FlagStatus >= 500 && System_FlagStatus <= 504)		 //	  611 火花极限，单次火花数
+	if(ScreenID == 1 && ControlID == 32 && System_FlagStatus >= 500 && System_FlagStatus <= 505)		 //	  611 火花极限，单次火花数
 	{																									 //	  612 火花极限，持续火花数
 	 u8	m = 0,k = 0,n = 0;																				 //	  613 火花极限，火花时间
 		k = j;																							 //	  614 时间极限
 		if(Txt[0] == '\0')																				 //	  615 熄灭时间
-		sum = 0;																						 
+		sum = 0;																						 //	  616 报警时间
 		else
 		{ 																							 
 			for(m = 0;m < j;m++)		//小键盘输入字符串转换成数值									
@@ -321,16 +321,23 @@ void TextProcess()
 					 DisText(280,230,0,9,Display61);
 					 _24C08_I2C_HalfwordWrite(10*Spark_DANGER_C_N,8);
 				     break;
-            case 504:Alarm_TIME = sum ;
+            case 504:Spray_TIME = sum ;
+					 itoaT(Spray_TIME,Display61);
+					 DisText(280,230,0,9,Display61);
+					 _24C08_I2C_HalfwordWrite(Spray_TIME,10);
+				     break;
+			case 505:Alarm_TIME = sum ;
 					 itoaT(Alarm_TIME,Display61);
 					 DisText(280,230,0,9,Display61);
-					 _24C08_I2C_HalfwordWrite(Alarm_TIME,10);
+					 _24C08_I2C_HalfwordWrite(Alarm_TIME,36);
 				     break;
 			 default:break;
 		}																								 
 	}
 
 }
+
+/********************************************************************************************************************************/
 
 void ButtonProcess()
 {
@@ -360,7 +367,7 @@ void ButtonProcess()
 			{
 				Alarm_reset_Flag = 1;
 				Alarm_Flag = 0;												   //声光报警倒计时复位
-				FSMC_CPLD_Write(CPLD_0x840_Status&=0xFE,0x840);				   //按下复位按钮后，立即复位声光报警设备						   
+				FSMC_CPLD_Write(CPLD_0x840_Status&=(~IO_ALARM_EN),0x840);	   //按下复位按钮后，立即复位声光报警设备						   
 			}
 
 
@@ -393,13 +400,14 @@ void ButtonProcess()
 			Flag = 13;														   //系统界面时的上键功能
 			if(ScreenID == 1 && (ControlID == 17 || ControlID == 20) && Menu_FlagStatus == 3 && UD_FlagStatus == 0 && LR_FlagStatus == 0)		 
 			Flag = 14;                                                         //系统界面时的右键功能---1输入密码
-			if(ScreenID == 1 && (ControlID == 17 || ControlID == 20) && Menu_FlagStatus == 3 && System_FlagStatus == 50 && LR_FlagStatus == 2 && UD_FlagStatus >= 0 && UD_FlagStatus <= 4 )
+			if(ScreenID == 1 && (ControlID == 17 || ControlID == 20) && Menu_FlagStatus == 3 && System_FlagStatus == 50 && LR_FlagStatus == 2 && UD_FlagStatus >= 0 && UD_FlagStatus <= 5 )
 			Flag = 15;														   //61探头组参数的右键功能--611 火花极限，单次火花数
 																			   //61探头组参数的右键功能--612 火花极限，持续火花数
 																		       //61探头组参数的右键功能--613 火花极限，火花时间		
 																			   //61探头组参数的右键功能--614 时间极限
 																			   //61探头组参数的右键功能--615 熄灭时间
-			if(ScreenID == 1 && (ControlID == 17 || ControlID == 20) && Menu_FlagStatus == 3 && System_FlagStatus == 5 && LR_FlagStatus == 1 && UD_FlagStatus == 0  || (ScreenID == 1 && (ControlID == 18 || ControlID == 21) && System_FlagStatus >= 500 && System_FlagStatus <= 504 && LR_FlagStatus == 3))
+																			   //61探头组参数的右键功能--616 报警时间
+			if(ScreenID == 1 && (ControlID == 17 || ControlID == 20) && Menu_FlagStatus == 3 && System_FlagStatus == 5 && LR_FlagStatus == 1 && UD_FlagStatus == 0  || (ScreenID == 1 && (ControlID == 18 || ControlID == 21) && System_FlagStatus >= 500 && System_FlagStatus <= 505 && LR_FlagStatus == 3))
 			Flag = 19;														   //6安装参数设置界面的右键功能--61 探头组参数
 																			   //61 探头组参数-->右键-->左键
 			if(Code_Flag2 > 0 && ScreenID == 1 && (ControlID == 17 || ControlID == 20) && Menu_FlagStatus == 3 && UD_FlagStatus == 5 && LR_FlagStatus == 0 || (ScreenID == 1 && (ControlID == 18 || ControlID == 21) && System_FlagStatus >= 50 && System_FlagStatus <= 53 && LR_FlagStatus == 2))
@@ -804,8 +812,8 @@ void ButtonProcess()
 					cursor_Yn = 3;
 					if(System_FlagStatus == 5 )			                       //6的下键菜单	   4个
 					cursor_Yn = 4;
-					if(System_FlagStatus == 50)								   //61的下键菜单	   5个
-					cursor_Yn = 5;
+					if(System_FlagStatus == 50)								   //61的下键菜单	   6个
+					cursor_Yn = 6;
 					if(System_FlagStatus == 60 || System_FlagStatus == 66 || System_FlagStatus == 20)	   //71、77/31的下键菜单  2个
 					cursor_Yn = 2;
 					if(cursor_Yn != 0)
@@ -836,8 +844,8 @@ void ButtonProcess()
 					cursor_Yn = 3;
 					if(System_FlagStatus == 5) 				 				   //6的上键菜单	4个
 					cursor_Yn = 4;
-					if(System_FlagStatus == 50)								   //61的上键菜单	5个
-					cursor_Yn = 5;
+					if(System_FlagStatus == 50)								   //61的上键菜单	6个
+					cursor_Yn = 6;
 					if(System_FlagStatus == 60 || System_FlagStatus == 66 || System_FlagStatus == 20 )     //71、77、31的上键菜单	2个
 					cursor_Yn = 2;
 					if(cursor_Yn != 0)
@@ -887,7 +895,7 @@ void ButtonProcess()
 					LR_FlagStatus++;										   //613 火花极限，火花时间
 																			   //614 时间极限
 					WriteLayer(Layer);										   //615 熄灭时间
-					SetFcolor(0xFFFF);
+					SetFcolor(0xFFFF);										   //616 报警时间
 					GUI_RectangleFill(131,1,499,72);
 					GUI_RectangleFill(0,74,619,380);
 					SetFcolor(0);
@@ -914,6 +922,10 @@ void ButtonProcess()
 						case 4:temp_num = _24C08_I2C_HalfwordRead(10);
 						       System_FlagStatus = 504;					
 							   DisText(5,80,0,2,Content[Lang_Flag][38]);
+							   break;
+						case 5:temp_num = _24C08_I2C_HalfwordRead(36);
+						       System_FlagStatus = 505;					
+							   DisText(5,80,0,2,Content[Lang_Flag][114]);
 							   break;
 					   default:break;
 					}
@@ -954,6 +966,7 @@ void ButtonProcess()
 					DisText(45,170,0,2,Content[Lang_Flag][79]);
 					DisText(45,195,0,2,Content[Lang_Flag][80]);
 					DisText(45,220,0,2,Content[Lang_Flag][81]);
+					DisText(45,245,0,2,Content[Lang_Flag][113]);
 					xitong_Dn=125;
 					DisArea_Image(20,xitong_Dn,2,0);
 					DisplyLayer(Layer);
@@ -1355,6 +1368,8 @@ void ButtonProcess()
 					Confirm_FlagStatus = 1;									   //确保确认键只能按一次
 					Test_mode_Flag = 1;
 					
+					TIM_Cmd(TIM2,ENABLE);
+
 					WriteLayer(Layer);											 
 					SetFcolor(0xFFFF);
 					GUI_RectangleFill(131,1,499,72);
@@ -1391,7 +1406,9 @@ void ButtonProcess()
 						Data_Save_Fault();
 						_24C08_I2C_HalfwordWrite(Fault_num++,48);
 						itoaT(Fault_num,GUZHANG_CUT);
-					    SetTextView(1,39,GUZHANG_CUT);		   
+					    SetTextView(1,39,GUZHANG_CUT);
+						TIM_Cmd(TIM2,DISABLE);								   //发现故障后第一时间关闭定时器循环检测
+						Single_Flag = 1;		   							   //初始化累加器
 					}
 					if(Test_result_Flag == 2)								   //正常
 					{
@@ -1409,7 +1426,7 @@ void ButtonProcess()
 					Layer=3-Layer;					
 					FSMC_CPLD_Write(0x00,0x17);							 	   //关闭测试信号
 					Delay_ms(0xffff);
-					Poweron_TIM2_Enable_Flag = 0;
+					Spark_test_Enable_Flag = 0;
 					Test_result_Flag = 0;
 				}   break;
 				case 34: 		 
@@ -1554,13 +1571,13 @@ void ButtonProcess()
 					DisText(45,145,0,2,Content[Lang_Flag][98]);
 					if(Buzzer_Flag == 1)
 					{
-						GUI_Rectangle(93,128,103,138);
-						GUI_RectangleFill(93,153,103,163);	
+						GUI_RectangleFill(93,128,103,138);
+						GUI_Rectangle(93,153,103,163);	
 					}
 					else
 					{
-						GUI_RectangleFill(93,128,103,138);
-						GUI_Rectangle(93,153,103,163);
+						GUI_Rectangle(93,128,103,138);
+						GUI_RectangleFill(93,153,103,163);
 					}
 					xitong_Dn=125;
 					DisArea_Image(20,xitong_Dn,2,0);
@@ -1571,7 +1588,7 @@ void ButtonProcess()
 				{															   //77 开关内部喇叭--771 打开按键蜂鸣器
 					Buzzer_Flag = 1;
 					_24C08_I2C_HalfwordWrite(1,14);							  //保存此时状态到 EEPROM 用于下次开机使用
-					SetTouchScreen(19);										  
+					SetTouchScreen(19);										  //控制触摸屏打开蜂鸣器
 					WriteLayer(Layer);
 					SetFcolor(0xFFFF);
 					GUI_RectangleFill(131,1,499,72);
@@ -1592,7 +1609,7 @@ void ButtonProcess()
 				{															   //77 开关内部喇叭--772 关闭按键蜂鸣器
 					Buzzer_Flag = 0;
 					_24C08_I2C_HalfwordWrite(0,14);
-					SetTouchScreen(17);
+					SetTouchScreen(17);										   //控制触摸屏关闭蜂鸣器
 					WriteLayer(Layer);
 					SetFcolor(0xFFFF);
 					GUI_RectangleFill(131,1,499,72);
@@ -1819,9 +1836,10 @@ void Power_on_self_Test()													   //开机时检测传感器等元件是否工作正常
 	   	Fault_num = _24C08_I2C_HalfwordRead(48);
 	}
 	TIM_Cmd(TIM2,DISABLE);
-	FSMC_CPLD_Write(0x00,0x17);							 	   //关闭测试信号	
+	FSMC_CPLD_Write(0x00,0x17);							 	   //关闭测试信号
+	
+	Spark_test_Enable_Flag = 0;	
 
-	Test_result_Flag = 0;
 }
 
 
@@ -1836,8 +1854,9 @@ void ScreenInit()                                                              /
 	  Button_Dn = 2;				   //警报界面时，上下键按一次更新显示另外2条信息
 	  Screen_update_Flag = 0;		   //自检程序有可能使屏幕更新标志位置1，此处重新置0
 
-	  _24C08_I2C_HalfwordWrite(0,0);			                               //火花事件计数清0
-	  _24C08_I2C_HalfwordWrite(0,34);			                               //火花结束事件计数清0                       
+	  //_24C08_I2C_HalfwordWrite(0,0);			                               //火花事件计数清0
+	  //_24C08_I2C_HalfwordWrite(0,34);			                               //火花结束事件计数清0
+	  //_24C08_I2C_HalfwordWrite(7,36);                       				   //报警时间初次设定
 	  _24C08_I2C_PageWrite(I2C_Data,16,4);		                               //初始密码定为1234
 	  _24C08_I2C_ByteWrite(4,32); 				                               //初始密码长度定为4位
 	  _24C08_I2C_ByteWrite(1,14);											   //蜂鸣器开
@@ -1845,12 +1864,14 @@ void ScreenInit()                                                              /
 	  Spark_DANGER_B = _24C08_I2C_HalfwordRead(4);
 	  Spark_DANGER_B_M = _24C08_I2C_HalfwordRead(6);
 	  Spark_DANGER_C_N = _24C08_I2C_HalfwordRead(8);
-	  Alarm_TIME = _24C08_I2C_HalfwordRead(10);
+	  Spray_TIME = _24C08_I2C_HalfwordRead(10);
 	  Lang_Flag = _24C08_I2C_HalfwordRead(12);
-	  Buzzer_Flag =	_24C08_I2C_HalfwordRead(14);							   
-	  Alarm_num = _24C08_I2C_HalfwordRead(0);								   //读取当前火花事件记录个数
-	  Alarm_End_num = _24C08_I2C_HalfwordRead(34);							   //读取当前火花结束事件记录个数
-
+	  Buzzer_Flag =	_24C08_I2C_HalfwordRead(14);
+	  Alarm_TIME = _24C08_I2C_HalfwordRead(36);							   
+	  Alarm_End_num = _24C08_I2C_HalfwordRead(34);							   //读取上次掉电前火花事件记录个数
+	  Alarm_num = Alarm_End_num;											   //因为掉电可能在火花结束记录之前，所以开机时Alarm_End_num要和Alarm_num保持一致
+	  _24C08_I2C_HalfwordWrite(Alarm_num,0);							  
+																			   
 	  WriteLayer(1);					                                       //写图层一						
 	   
 	  SetFcolor(0xFFFF);
@@ -1896,8 +1917,17 @@ void ScreenInit()                                                              /
 	  DisArea_Image(534,12,0,0);						 
 	  DisplyLayer(1);					                                       //显示图层一
 	  CopyLayer(1,2);					                                       //保留图层一的内容到图层二
-
-	  TIM_Cmd(TIM2,ENABLE);													   //启动每0.5s一次的定时中断
+	  
+	    if(Test_result_Flag == 1)								   //故障
+	    {
+		    TIM_Cmd(TIM2,DISABLE);								   //发现故障后第一时间关闭定时器循环检测
+			Single_Flag = 1;		   							   //初始化累加器 
+		}
+		if(Test_result_Flag == 2)								   //工作正常
+		{
+		   	TIM_Cmd(TIM2,ENABLE);								   //启动每0.5s一次的定时中断
+		} 
+		
 }
 
 void Screen_update()                                                           //屏幕数据更新显示程序--事件开始时间

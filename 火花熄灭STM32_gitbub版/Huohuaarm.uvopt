@@ -163,23 +163,18 @@
           <WinNumber>1</WinNumber>
           <ItemText>Single_num</ItemText>
         </Ww>
-        <Ww>
-          <count>2</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>temp11</ItemText>
-        </Ww>
       </WatchWindow1>
       <MemoryWindow1>
         <Mm>
           <WinNumber>1</WinNumber>
           <SubType>0</SubType>
-          <ItemText>0x6c000840</ItemText>
+          <ItemText>0x68000000</ItemText>
         </Mm>
       </MemoryWindow1>
       <DebugFlag>
         <trace>0</trace>
         <periodic>1</periodic>
-        <aLwin>0</aLwin>
+        <aLwin>1</aLwin>
         <aCover>0</aCover>
         <aSer1>0</aSer1>
         <aSer2>0</aSer2>
@@ -272,7 +267,7 @@
       <FileType>2</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
+      <ColumnNumber>34</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>0</TopLine>
       <CurrentLine>0</CurrentLine>
@@ -312,10 +307,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>4</ColumnNumber>
+      <ColumnNumber>53</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>130</TopLine>
-      <CurrentLine>143</CurrentLine>
+      <TopLine>253</TopLine>
+      <CurrentLine>271</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\User\main.c</PathWithFileName>
       <FilenameWithoutPath>main.c</FilenameWithoutPath>
@@ -345,10 +340,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>13</ColumnNumber>
+      <ColumnNumber>18</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>1842</TopLine>
-      <CurrentLine>1848</CurrentLine>
+      <TopLine>1</TopLine>
+      <CurrentLine>10</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\User\Functions.c</PathWithFileName>
       <FilenameWithoutPath>Functions.c</FilenameWithoutPath>
@@ -359,10 +354,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>20</ColumnNumber>
+      <ColumnNumber>21</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>552</TopLine>
-      <CurrentLine>552</CurrentLine>
+      <TopLine>585</TopLine>
+      <CurrentLine>598</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\User\stm32f10x_it.c</PathWithFileName>
       <FilenameWithoutPath>stm32f10x_it.c</FilenameWithoutPath>
@@ -373,10 +368,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>25</ColumnNumber>
+      <ColumnNumber>83</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>288</TopLine>
-      <CurrentLine>288</CurrentLine>
+      <TopLine>0</TopLine>
+      <CurrentLine>0</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\User\fsmc_cpld_sram.c</PathWithFileName>
       <FilenameWithoutPath>fsmc_cpld_sram.c</FilenameWithoutPath>
@@ -387,7 +382,7 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
+      <ColumnNumber>54</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>0</TopLine>
       <CurrentLine>0</CurrentLine>
@@ -403,8 +398,8 @@
       <Focus>0</Focus>
       <ColumnNumber>31</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>1</TopLine>
-      <CurrentLine>14</CurrentLine>
+      <TopLine>0</TopLine>
+      <CurrentLine>0</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\User\24C08_I2c.c</PathWithFileName>
       <FilenameWithoutPath>24C08_I2c.c</FilenameWithoutPath>
@@ -415,7 +410,7 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
+      <ColumnNumber>51</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>0</TopLine>
       <CurrentLine>0</CurrentLine>
@@ -431,8 +426,8 @@
       <Focus>0</Focus>
       <ColumnNumber>111</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>1</TopLine>
-      <CurrentLine>1</CurrentLine>
+      <TopLine>0</TopLine>
+      <CurrentLine>0</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\User\Rtc_operation.c</PathWithFileName>
       <FilenameWithoutPath>Rtc_operation.c</FilenameWithoutPath>
@@ -443,10 +438,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>66</ColumnNumber>
+      <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>303</TopLine>
-      <CurrentLine>303</CurrentLine>
+      <TopLine>304</TopLine>
+      <CurrentLine>329</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\User\Spark_test.c</PathWithFileName>
       <FilenameWithoutPath>Spark_test.c</FilenameWithoutPath>
@@ -459,8 +454,8 @@
       <Focus>0</Focus>
       <ColumnNumber>28</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>31</TopLine>
-      <CurrentLine>47</CurrentLine>
+      <TopLine>0</TopLine>
+      <CurrentLine>0</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\User\Fault_test.c</PathWithFileName>
       <FilenameWithoutPath>Fault_test.c</FilenameWithoutPath>
@@ -473,8 +468,8 @@
       <Focus>0</Focus>
       <ColumnNumber>30</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>1</TopLine>
-      <CurrentLine>7</CurrentLine>
+      <TopLine>0</TopLine>
+      <CurrentLine>0</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\User\Disable_test .c</PathWithFileName>
       <FilenameWithoutPath>Disable_test .c</FilenameWithoutPath>
@@ -485,10 +480,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>29</ColumnNumber>
+      <ColumnNumber>30</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>4</TopLine>
-      <CurrentLine>18</CurrentLine>
+      <TopLine>1</TopLine>
+      <CurrentLine>7</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\User\Params.c</PathWithFileName>
       <FilenameWithoutPath>Params.c</FilenameWithoutPath>
@@ -499,9 +494,9 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>51</ColumnNumber>
+      <ColumnNumber>86</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>13</TopLine>
+      <TopLine>8</TopLine>
       <CurrentLine>20</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\User\language.c</PathWithFileName>
@@ -515,8 +510,8 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>1280</TopLine>
-      <CurrentLine>1295</CurrentLine>
+      <TopLine>0</TopLine>
+      <CurrentLine>0</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\User\Screen.c</PathWithFileName>
       <FilenameWithoutPath>Screen.c</FilenameWithoutPath>
@@ -532,8 +527,8 @@
 
   <AlienFiles>
     <PathWithFilename>E:\GITHUB\spark\火花熄灭STM32_gitbub版\User\extern_variables.h</PathWithFilename>
-    <TopLine>103</TopLine>
-    <CurrentLine>103</CurrentLine>
+    <TopLine>21</TopLine>
+    <CurrentLine>21</CurrentLine>
     <Constant>0</Constant>
     <WindowPosition>
       <length>0</length>
@@ -561,49 +556,49 @@
     <ActiveMDIGroup>0</ActiveMDIGroup>
     <MDIGroup>
       <Size>100</Size>
-      <ActiveTab>2</ActiveTab>
+      <ActiveTab>3</ActiveTab>
       <Documents>
         <Doc>
+          <Name>.\User\stm32f10x_it.c</Name>
+          <ColumnNumber>21</ColumnNumber>
+          <TopLine>585</TopLine>
+          <CurrentLine>598</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>User\extern_variables.h</Name>
+          <ColumnNumber>5</ColumnNumber>
+          <TopLine>21</TopLine>
+          <CurrentLine>21</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>.\User\Spark_test.c</Name>
+          <ColumnNumber>0</ColumnNumber>
+          <TopLine>304</TopLine>
+          <CurrentLine>329</CurrentLine>
+        </Doc>
+        <Doc>
           <Name>.\User\main.c</Name>
-          <ColumnNumber>4</ColumnNumber>
-          <TopLine>130</TopLine>
-          <CurrentLine>143</CurrentLine>
+          <ColumnNumber>53</ColumnNumber>
+          <TopLine>253</TopLine>
+          <CurrentLine>271</CurrentLine>
         </Doc>
         <Doc>
           <Name>.\User\Functions.c</Name>
-          <ColumnNumber>13</ColumnNumber>
-          <TopLine>1842</TopLine>
-          <CurrentLine>1848</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>.\User\stm32f10x_it.c</Name>
-          <ColumnNumber>20</ColumnNumber>
-          <TopLine>552</TopLine>
-          <CurrentLine>552</CurrentLine>
+          <ColumnNumber>18</ColumnNumber>
+          <TopLine>1</TopLine>
+          <CurrentLine>10</CurrentLine>
         </Doc>
         <Doc>
           <Name>.\User\language.c</Name>
-          <ColumnNumber>51</ColumnNumber>
-          <TopLine>13</TopLine>
+          <ColumnNumber>86</ColumnNumber>
+          <TopLine>8</TopLine>
           <CurrentLine>20</CurrentLine>
         </Doc>
         <Doc>
           <Name>.\User\Params.c</Name>
-          <ColumnNumber>29</ColumnNumber>
-          <TopLine>4</TopLine>
-          <CurrentLine>18</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>User\extern_variables.h</Name>
           <ColumnNumber>30</ColumnNumber>
-          <TopLine>103</TopLine>
-          <CurrentLine>103</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>.\User\Spark_test.c</Name>
-          <ColumnNumber>66</ColumnNumber>
-          <TopLine>303</TopLine>
-          <CurrentLine>303</CurrentLine>
+          <TopLine>1</TopLine>
+          <CurrentLine>7</CurrentLine>
         </Doc>
       </Documents>
     </MDIGroup>

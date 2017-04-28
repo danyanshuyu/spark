@@ -592,7 +592,7 @@ void TIM3_IRQHandler(void)
 			if(Spray_Event[i] != 0) 
 			{
 				Spray_Event[i]++;
-				if(Spray_Event[i] > 50)					//延迟时间 50*0.1s=5s
+				if(Spray_Event[i] > 10*Spray_TIME)					//延迟时间 Spray_TIME*10*0.1s=Spray_TIME
 				{
 					Spray_Event[i] = 0;
 					Data_Save_End();					//记录火花事件结束时间，
@@ -603,19 +603,19 @@ void TIM3_IRQHandler(void)
 
 
 		if(SprayTime_Cnt != 0) SprayTime_Cnt++;
-		if(SprayTime_Cnt > 50)
+		if(SprayTime_Cnt > 10*Spray_TIME)
 		{
-			FSMC_CPLD_Write(CPLD_0x840_Status&=0xFD,0x840);      //到规定时间，关闭喷水
+			FSMC_CPLD_Write(CPLD_0x840_Status&=(~IO_SPRAY_EN),0x840);      //到规定时间，关闭喷水
 	   		SprayTime_Cnt = 0;
 		}
 
 		
-		if(Alarm_Flag== 1)				                         //声光报警持续一段时间后关闭 单位：秒
+		if(Alarm_Flag== 1)				                         //声光报警开启标记，开始计数
 		{
 		   AlarmTime_Cnt++;
-		   if(AlarmTime_Cnt == 10*(Alarm_TIME))
+		   if(AlarmTime_Cnt == 10*Alarm_TIME)					 //声光报警持续一段时间后关闭 单位：秒
 		   {
-		        FSMC_CPLD_Write(CPLD_0x840_Status&=0xFE,0x840);      //到规定时间，关闭声光报警
+		        FSMC_CPLD_Write(CPLD_0x840_Status&=(~IO_ALARM_EN),0x840);      //关闭声光报警
 		   		AlarmTime_Cnt = 0;
 				Alarm_Flag = 0;
 		   }  

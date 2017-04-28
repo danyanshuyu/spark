@@ -104,7 +104,7 @@ void WriteFlashStruct(u32 WriteAddress, u16 *p)
 		{
 			FLASHStatus = FLASH_ProgramHalfWord(STARTADDR + WriteAddress, *p); 		//一次写一个半字，即16位，占两个地址
 			WriteAddress+=2;											  //ARM是32位机，一个字是32位，半字是16位，字节永远是8位
-			p++;														  //stm32的flash是每8位一个寻址地址
+			p++;														  //每8位一个寻址地址
 			i++;
 		}	
 	}

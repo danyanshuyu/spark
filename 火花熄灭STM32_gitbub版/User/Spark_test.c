@@ -304,7 +304,7 @@ void Data_End_Get_Once(u16 Num)
 void Water_Spray()
 {
      //开启喷水
-	 FSMC_CPLD_Write(CPLD_0x840_Status|=0x02,0x840);         //开启喷水继电器
+	 FSMC_CPLD_Write(CPLD_0x840_Status|=IO_SPRAY_EN,0x840);         //开启喷水继电器
 	 if(Spray_Cnt == 100) 
 	 {
 	 	Spray_Cnt = 0;
@@ -320,13 +320,13 @@ void Water_Spray()
 	 
 
 	 //开启声光报警
-	 if(Alarm_reset_Flag == 1)			      //声光复位按钮按下时，不报警
+	 if(Alarm_reset_Flag == 1)			                       //声光复位按钮按下时，不报警
 	 {
      	;	
 	 }
 	 else
 	 {
-	 	 FSMC_CPLD_Write(CPLD_0x840_Status|=0x01,0x840);         //开启报警灯
+	 	 FSMC_CPLD_Write(CPLD_0x840_Status|=IO_ALARM_EN,0x840);         //开启报警灯
 		 Alarm_Flag  = 1;					                     //开始声光报警倒计时
 		 AlarmTime_Cnt = 0;						                 //一旦有最新火花事件，从新计数
 	 }
